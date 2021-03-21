@@ -1,3 +1,7 @@
+import path from "path";
+
+const __dirname = path.resolve();
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
