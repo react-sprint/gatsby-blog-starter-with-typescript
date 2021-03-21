@@ -1,6 +1,5 @@
-import path from "path";
-
-const __dirname = path.resolve();
+const path = require(`path`);
+const _dirname = path.resolve();
 
 module.exports = {
   siteMetadata: {
@@ -19,14 +18,14 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sass",
       options: {
-        additionalData: `@import "${__dirname}/src/styles/variables.scss"; @import "${__dirname}/src/styles/mixins.scss";`,
+        additionalData: `@import "${_dirname}/src/styles/variables.scss"; @import "${_dirname}/src/styles/mixins.scss";`,
       },
     },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
+        path: `${_dirname}/content/blog`,
         name: `blog`,
       },
     },
@@ -34,7 +33,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${_dirname}/src/images`,
       },
     },
     {
