@@ -1,18 +1,10 @@
-<<<<<<< HEAD
 import * as React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/layout';
+import Layout from '../components/layout/index';
 import SEO from '../components/seo';
-=======
-import * as React from "react";
-import { graphql } from "gatsby";
 
-import Layout from "../components/layout/index";
-import SEO from "../components/seo";
-
-import "../styles/404.scss";
->>>>>>> 532bf4cc067f9a9cc42b7c3082e50bfc7bfde0b5
+import '../styles/404.scss';
 
 const NotFoundPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;

@@ -1,19 +1,10 @@
-<<<<<<< HEAD
 import * as React from 'react';
 import { Link, graphql } from 'gatsby';
 
 import Bio from '../components/bio';
-import Layout from '../components/layout';
+import Layout from '../components/layout/index.js';
 import SEO from '../components/seo';
-=======
-import * as React from "react";
-import { Link, graphql } from "gatsby";
-
-import Bio from "../components/bio";
-import Layout from "../components/layout/index.js";
-import SEO from "../components/seo";
-import Sample from "../components/sample";
->>>>>>> 532bf4cc067f9a9cc42b7c3082e50bfc7bfde0b5
+import Sample from '../components/sample';
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;

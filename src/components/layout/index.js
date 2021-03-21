@@ -1,12 +1,7 @@
-<<<<<<< HEAD:src/components/layout.js
 import * as React from 'react';
 import { Link } from 'gatsby';
-=======
-import * as React from "react";
-import { Link } from "gatsby";
 
-import "./index.scss";
->>>>>>> 532bf4cc067f9a9cc42b7c3082e50bfc7bfde0b5:src/components/layout/index.js
+import './index.scss';
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
