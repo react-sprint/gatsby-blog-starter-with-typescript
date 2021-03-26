@@ -45,7 +45,12 @@ module.exports = {
     'no-throw-literal': 'off',
     'no-use-before-define': 'off',
     'no-shadow': 'off',
-    'prettier/prettier': ['error'],
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
     'react/no-unescaped-entities': 0,
     'react/no-danger': 0,
     '@typescript-eslint/no-use-before-define': [
