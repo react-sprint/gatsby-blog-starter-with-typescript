@@ -4,9 +4,9 @@ import { Link } from 'gatsby';
 import './index.scss';
 
 const Layout = ({ location, title, children }) => {
+  let header;
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath = location.pathname === rootPath;
-  let header;
 
   if (isRootPath) {
     header = (
