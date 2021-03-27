@@ -1,15 +1,21 @@
-/**
- * @light theme
- */
+@import './reset.scss';
 
 // body
 $light-background-color: #fff;
 $light-text-shadow: 0 0 0.1px rgba(0, 0, 0, 0.3);
 
 // index
-$dark-gray: #333;
-$middle-gray: #7d7d7d;
-$light-gray: #aaa;
+$theme-green: #55af7a;
+$light-green: #97d4b0;
+$pale-green: #e7f2ec;
+
+$black: #363739;
+$dark-black: #2a2a2a;
+$gray: #585858;
+$middle-gray: #848484;
+$light-gray: #b8b8b8;
+
+$border-gray: #e1e1e1;
 
 // device-sizes
 $mobile-min: 320px;
