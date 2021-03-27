@@ -1,0 +1,17 @@
+.index-title {
+  @include card();
+  margin-bottom: 40px;
+  color: $dark-black;
+  font-size: 20px;
+  font-weight: bold;
+  > img {
+    margin-right: 10px;
+  }
+}
+
+.card-container {
+  @include card();
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
