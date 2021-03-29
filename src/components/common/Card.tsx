@@ -5,7 +5,26 @@ import viewIcon from '../../images/card-view-icon.svg';
 import likedIcon from '../../images/card-liked-icon.svg';
 import '../../styles/components/card.scss';
 
-export default function Card({ post }) {
+interface Field {
+  slug: string;
+}
+interface Frontmatter {
+  title: string;
+  description: string;
+  date: string;
+}
+
+interface Post {
+  excerpt: string;
+  frontmatter: Frontmatter;
+  fields: Field;
+}
+
+interface Props {
+  post: Post;
+}
+
+export default function Card({ post }: Props) {
   const title = post.frontmatter.title || post.fields.slug;
   return (
     <Link to={post.fields.slug}>
