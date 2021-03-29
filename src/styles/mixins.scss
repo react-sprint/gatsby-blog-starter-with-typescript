@@ -16,7 +16,6 @@
 
 // index.tsx only
 @mixin card {
-  max-width: 542px;
   margin: 0 auto;
   @include mobile {
     a {
@@ -34,7 +33,10 @@
     margin-left: 0;
     margin-right: 0;
     a {
-      width: 236px;
+      width: 300px;
+      &:nth-child(even) {
+        margin-right: 80px;
+      }
     }
   }
 }

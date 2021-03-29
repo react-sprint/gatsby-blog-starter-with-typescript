@@ -1,13 +1,14 @@
 .card {
   margin-bottom: 38px;
   transition: 0.2s ease-in-out;
-  box-shadow: 0px 4px 30px rgba(23, 54, 101, 0.08);
-  border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
   &:hover {
     transform: translate3d(0, -3px, 0);
     filter: brightness(1.1);
+  }
+  @include tablet {
+    margin-bottom: 68px;
   }
   @include pc {
     margin-bottom: 60px;
@@ -20,7 +21,7 @@
     height: 168px;
     background-color: $gray;
     @include pc {
-      height: 212px;
+      height: 185px;
     }
   }
   &--desc {
@@ -70,7 +71,7 @@
         align-items: center;
         &-icon {
           width: 13px;
-          height: 14px;
+          height: 12px;
         }
         &-text {
           @include point-font();

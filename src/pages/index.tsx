@@ -12,9 +12,7 @@ import '../styles/pages/index.scss';
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const posts = data.allMarkdownRemark.nodes;
-  const markdown = data;
-
-  console.log(markdown);
+  // const markdown = data;
 
   if (posts.length === 0) {
     return (
@@ -34,15 +32,23 @@ const BlogIndex = ({ data, location }) => {
       <SEO title="All posts" />
       {/* <Bio /> */}
       {/* 이후에 추가해주세요 ▲ */}
-      <h2 className="index-title">
-        <img src={titleIcon} alt="title icon" />
-        POSTS
-      </h2>
-      <div className="max-width-1024 card-container">
-        {posts.map((post) => {
-          console.log(post);
-          return <Card key={post.fields.slug} post={post} />;
-        })}
+      <div className="main">
+        <aside className="main-aside">
+          <h3>-</h3>
+        </aside>
+        <div className="index">
+          <h2 className="index-title">
+            <img src={titleIcon} alt="title icon" />
+            POSTS
+          </h2>
+          <div className="index-content">
+            <div className="max-width-1024 card-container">
+              {posts.map((post) => (
+                <Card key={post.fields.slug} post={post} />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </Layout>
   );
