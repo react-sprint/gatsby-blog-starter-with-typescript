@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
 
-import Bio from '../components/bio';
-import Layout from '../components/layout/layout';
-import SEO from '../components/seo';
-import Card from '../components/card';
+import Bio from '../components/Bio';
+import Layout from '../components/layout';
+import SEO from '../components/Seo';
+import Card from '../components/common/Card';
 import titleIcon from '../images/title-icon.svg';
 
 import '../styles/pages/index.scss';

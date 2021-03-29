@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 
-import './layout.scss';
+import './index.scss';
 
 const Layout = ({ location, title, children }) => {
   let header;

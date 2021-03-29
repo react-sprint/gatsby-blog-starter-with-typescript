@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import viewIcon from '../images/card-view-icon.svg';
-import likedIcon from '../images/card-liked-icon.svg';
-import '../styles/components/card.scss';
+import viewIcon from '../../images/card-view-icon.svg';
+import likedIcon from '../../images/card-liked-icon.svg';
+import '../../styles/components/card.scss';
 
 export default function Card({ post }) {
   const title = post.frontmatter.title || post.fields.slug;
