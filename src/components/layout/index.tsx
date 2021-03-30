@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link } from 'gatsby';
 
 import './index.scss';
-import GitButton from '../common/GitButton';
+import Button from '../common/Button';
 
 const Layout = ({ location, title, children }) => {
   let header;
@@ -27,7 +27,7 @@ const Layout = ({ location, title, children }) => {
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       {/* <header className="global-header">{header}</header> */}
       <header className="global-header">
-        <GitButton />
+        <Button props="GITHUB" />
       </header>
       <main className="global-main">{children}</main>
       {/* <footer>

@@ -1,14 +1,28 @@
 @import '../../styles/variables.scss';
 
-.git-button {
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 92px;
+  height: 42px;
+  padding: 12px 18px;
   font-size: 14px;
   padding: 10px;
-  color: $wthie;
+  color: $white;
   background-color: $theme-green;
   border: 1px solid $theme-green;
-  border-radius: 7px;
+  border-radius: 10px;
   transition: 0.2s;
   cursor: pointer;
+
+  p {
+    width: 56px;
+    height: 18px;
+    font-weight: 700;
+    line-height: 18px;
+  }
 
   &:hover {
     transition: 0.2s;
