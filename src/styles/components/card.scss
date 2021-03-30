@@ -1,0 +1,98 @@
+.card {
+  margin-bottom: 38px;
+  transition: 0.2s ease-in-out;
+  overflow: hidden;
+  cursor: pointer;
+  &:hover {
+    transform: translate3d(0, -3px, 0);
+    filter: brightness(1.1);
+  }
+  @include tablet {
+    margin-bottom: 68px;
+  }
+  @include pc {
+    margin-bottom: 60px;
+    box-shadow: none;
+    border-radius: 0px;
+    overflow: auto;
+  }
+  &--image {
+    border-radius: 4px 4px 0 0;
+    height: 168px;
+    background-color: $gray;
+    @include pc {
+      height: 185px;
+    }
+  }
+  &--desc {
+    padding: 20px 16px 0;
+    @include pc {
+      padding: 0px;
+    }
+    &__top {
+      color: $dark-black;
+      .date {
+        @include point-font();
+        border-bottom: 1px solid $border-gray;
+        padding-bottom: 10px;
+        color: #b8b8b8;
+        font-size: 13px;
+      }
+      .title {
+        line-height: 150%;
+        margin: 16px 0;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .contents {
+        margin-bottom: 12px;
+        font-size: 15px;
+        line-height: 150%;
+        /* --- css for "..." */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        height: 5.8em;
+        text-align: left;
+        word-wrap: break-word;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        /* css for "..." --- */
+      }
+    }
+    &__bottom {
+      display: flex;
+      align-items: center;
+      margin: 10px 0 20px;
+      color: $light-gray;
+      .card-view {
+        display: flex;
+        align-items: center;
+        &-icon {
+          width: 13px;
+          height: 12px;
+        }
+        &-text {
+          @include point-font();
+          margin-left: 6px;
+        }
+      }
+      .card-liked {
+        display: flex;
+        align-items: center;
+        margin-left: 16px;
+        &-icon {
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 13px;
+          height: 12px;
+        }
+        &-text {
+          @include point-font();
+          margin-left: 6px;
+        }
+      }
+    }
+  }
+}

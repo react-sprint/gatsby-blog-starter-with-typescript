@@ -13,3 +13,36 @@
     @content;
   }
 }
+
+// index.tsx only
+@mixin card {
+  margin: 0 auto;
+  @include mobile {
+    a {
+      width: 100%;
+    }
+  }
+  @include tablet {
+    a {
+      width: 100%;
+    }
+  }
+  @include pc {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 0;
+    margin-right: 0;
+    a {
+      width: 300px;
+      &:nth-child(even) {
+        margin-right: 80px;
+      }
+    }
+  }
+}
+
+// english font
+@mixin point-font {
+  font-family: 'Lato', sans-serif;
+  line-height: 150%;
+}
