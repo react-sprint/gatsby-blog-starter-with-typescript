@@ -1,0 +1,18 @@
+@import '../../styles/variables.scss';
+
+.git-button {
+  font-size: 14px;
+  padding: 10px;
+  color: $wthie;
+  background-color: $theme-green;
+  border: 1px solid $theme-green;
+  border-radius: 7px;
+  transition: 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    transition: 0.2s;
+    transform: translate3d(0, -3px, 0);
+    box-shadow: 0px 4px 10px rgba(85, 175, 122, 0.4);
+  }
+}
