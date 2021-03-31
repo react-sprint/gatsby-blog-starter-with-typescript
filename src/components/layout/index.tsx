@@ -28,7 +28,7 @@ const Layout = ({ location, title, children }) => {
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       {/* <header className="global-header">{header}</header> */}
       <header className="global-header">
-        <Button text="GITHUB" color="black" icon={Git} />
+        <Button text="GITHUB" color="green" icon={Git} />
       </header>
       <main className="global-main">{children}</main>
       {/* <footer>

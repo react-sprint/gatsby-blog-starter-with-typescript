@@ -9,7 +9,7 @@ interface Iprops {
 
 const Button = ({ text, color, icon }: Iprops) => (
   <button className={color}>
-    <p className="text-layout">{text}</p>
+    {text}
     <img src={icon} />
   </button>
 );
