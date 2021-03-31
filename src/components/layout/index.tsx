@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 
 import './index.scss';
 import Button from '../common/Button';
+import Git from '../../images/git.svg';
 
 const Layout = ({ location, title, children }) => {
   let header;
@@ -27,7 +28,7 @@ const Layout = ({ location, title, children }) => {
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       {/* <header className="global-header">{header}</header> */}
       <header className="global-header">
-        <Button props="GITHUB" />
+        <Button text="GITHUB" color="black" icon={Git} />
       </header>
       <main className="global-main">{children}</main>
       {/* <footer>

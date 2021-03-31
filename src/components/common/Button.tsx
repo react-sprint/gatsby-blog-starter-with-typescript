@@ -2,9 +2,15 @@ import React from 'react';
 import '../../styles/components/common/button.scss';
 
 interface Iprops {
-  props: string;
+  text?: string;
+  icon?: string;
+  color: string; // default로 green과 black이 있음
 }
 
-const Button = ({ props }: Iprops) => <button className="button">{props}</button>;
-
+const Button = ({ text, color, icon }: Iprops) => (
+  <button className={color}>
+    <p className="text-layout">{text}</p>
+    <img src={icon} />
+  </button>
+);
 export default Button;
