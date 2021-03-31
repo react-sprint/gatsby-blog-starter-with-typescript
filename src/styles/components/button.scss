@@ -1,5 +1,3 @@
-@import '../../styles/variables.scss';
-
 .button {
   display: flex;
   flex-direction: row;
@@ -15,7 +13,7 @@
   border: 1px solid $theme-green;
   border-radius: 10px;
   transition: 0.2s;
-  cursor: pointer;
+  cursor: pointer; // 수정
 
   p {
     width: 56px;

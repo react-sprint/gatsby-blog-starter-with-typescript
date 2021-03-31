@@ -5,10 +5,6 @@ interface Iprops {
   props: string;
 }
 
-const Button = ({ props }: Iprops) => (
-  <button className="button">
-    <p>{props}</p>
-  </button>
-);
+const Button = ({ props }: Iprops) => <button className="button">{props}</button>;
 
 export default Button;
