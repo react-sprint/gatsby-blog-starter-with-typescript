@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/components/button.scss';
+import '../../styles/components/common/button.scss';
 
 interface Iprops {
   props: string;

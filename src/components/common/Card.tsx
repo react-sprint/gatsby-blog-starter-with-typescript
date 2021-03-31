@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import viewIcon from '../../images/card-view-icon.svg';
 import likedIcon from '../../images/card-liked-icon.svg';
-import '../../styles/components/card.scss';
+import '../../styles/components/common/card.scss';
 
 interface Field {
   slug: string;
