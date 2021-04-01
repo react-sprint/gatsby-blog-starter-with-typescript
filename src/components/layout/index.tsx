@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Link } from 'gatsby';
 
 import './index.scss';
+import Button from '../../constants/Button';
+import Git from '../../images/git.svg';
 
 const Layout = ({ location, title, children }) => {
   let header;
@@ -25,7 +27,9 @@ const Layout = ({ location, title, children }) => {
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       {/* <header className="global-header">{header}</header> */}
-      <header className="global-header">header</header>
+      <header className="global-header">
+        <Button text="GITHUB" color="green" icon={Git} />
+      </header>
       <main className="global-main">{children}</main>
       {/* <footer>
         © {new Date().getFullYear()}, Built with
