@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link } from 'gatsby';
 
 import './index.scss';
-import Button from '../common/Button';
+import Button from '../../constants/Button';
 import Git from '../../images/git.svg';
 
 const Layout = ({ location, title, children }) => {

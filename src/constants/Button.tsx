@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/components/common/button.scss';
+import '../styles/constants/button.scss';
 
 interface Iprops {
   text?: string;
