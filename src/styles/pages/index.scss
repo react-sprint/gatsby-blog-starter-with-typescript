@@ -14,14 +14,17 @@
 }
 
 .main-aside {
+  width: 100vw;
   height: 27px;
-  margin-top: 23px;
-  margin-bottom: 35px;
-  margin-right: -25px;
+  margin: 23px -25px 35px;
   background-color: $light-green;
   white-space: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   @include pc {
     position: sticky;
     top: 0;
