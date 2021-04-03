@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
+import useCategory from '../Hooks/useCategory';
 
 import Bio from '../components/Bio';
 import Layout from '../components/layout';
@@ -14,7 +15,7 @@ const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const posts = data.allMarkdownRemark.nodes;
   const categories: string[] = ['All', ...data.allMarkdownRemark.group.map((item) => item.fieldValue)];
-  const [category, setCategory] = useState<string>('All');
+  const [category, setCategory] = useCategory() as [string, () => void];
   // const markdown = data;
 
   if (posts.length === 0) {
