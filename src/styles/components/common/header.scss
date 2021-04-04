@@ -1,5 +1,5 @@
 .header-area {
-  height: 65px;
+  height: 60px;
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.03);
@@ -7,7 +7,7 @@
   justify-content: center;
 
   @include pc {
-    height: 84px;
+    height: 88px;
   }
 
   .header-contents {
@@ -36,11 +36,14 @@
 
     .header-category-container {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      width: 105px;
+
+      :not(:first-child) {
+        margin-left: 32px;
+      }
+
       h3 {
-        font-size: 15px;
+        font-size: 14px;
         color: $gray;
         font-weight: 500;
       }
@@ -49,13 +52,11 @@
       }
 
       @include pc {
-        width: 290px;
         h3 {
-          font-size: 18px;
+          font-size: 16px;
         }
         button {
           display: flex;
-          margin-left: 25px;
         }
       }
     }
