@@ -6,6 +6,6 @@ export const githubBtnProps = {
   color: 'green',
   icon: Git,
   handleClick: () => {
-    window.location.href = `${githubURl}`;
+    window.open(`${githubURl}`);
   },
 };
