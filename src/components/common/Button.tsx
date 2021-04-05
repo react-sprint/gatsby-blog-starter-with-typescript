@@ -4,7 +4,7 @@ import '../../styles/components/common/button.scss';
 interface Iprops {
   text?: string;
   icon?: string;
-  color?: string; // default로 green과 black이 있음
+  color?: 'green' | 'black'
   handleClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
