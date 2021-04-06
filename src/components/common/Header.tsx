@@ -1,7 +1,9 @@
 import React from 'react';
 import '../../styles/components/common/header.scss';
 import { Link } from 'gatsby';
-import { githubBtnProps } from '../../constants/buttonType';
+import { BUTTON_COLOR } from '../../constants/buttonType';
+import Git from '../../images/git.svg';
+import { githubURl } from '../../constants/userData';
 import Button from './Button';
 
 interface HeaderProps {
@@ -20,7 +22,14 @@ function Header({ headerTitle }: HeaderProps) {
           <Link to="/">
             <h3>ABOUT</h3>
           </Link>
-          <Button {...githubBtnProps} />
+          <Button
+            text="GITHUB"
+            color={BUTTON_COLOR.GREEN}
+            icon={Git}
+            handleClick={() => {
+              window.open(`${githubURl}`);
+            }}
+          />
         </div>
       </div>
     </header>

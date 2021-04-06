@@ -1,11 +1,7 @@
-import Git from '../images/git.svg';
-import { githubURl } from './userData';
-
-export const githubBtnProps = {
-  text: 'GITHUB',
-  color: 'green',
-  icon: Git,
-  handleClick: () => {
-    window.open(`${githubURl}`);
-  },
+export const BUTTON_COLOR = {
+  GREEN: 'green' as const,
+  BLACK: 'black' as const,
 };
+
+type Keys = keyof typeof BUTTON_COLOR;
+export type ButtonColorType = typeof BUTTON_COLOR[Keys];
