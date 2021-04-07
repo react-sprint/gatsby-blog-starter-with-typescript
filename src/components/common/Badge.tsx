@@ -1,5 +1,5 @@
 import React, { ReactChild } from 'react';
-import '../../styles/components/badge.scss';
+import '../../styles/components/common/badge.scss';
 
 export interface IBadge {
   id: string;

@@ -8,11 +8,9 @@ import SEO from '../components/Seo';
 import Category from '../components/common/Category';
 import Card from '../components/common/Card';
 import titleIcon from '../images/title-icon.svg';
-
 import '../styles/pages/index.scss';
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`;
   const posts = data.allMarkdownRemark.nodes;
   const categories: string[] = ['All', ...data.allMarkdownRemark.group.map((item) => item.fieldValue)];
   const [category, setCategory] = useCategory() as [string, () => void];
@@ -20,7 +18,7 @@ const BlogIndex = ({ data, location }) => {
 
   if (posts.length === 0) {
     return (
-      <Layout location={location} title={siteTitle}>
+      <Layout location={location}>
         <SEO title="All posts" />
         <Bio />
         <p>
@@ -32,7 +30,7 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <SEO title="All posts" />
       {/* <Bio /> */}
       {/* 이후에 추가해주세요 ▲ */}

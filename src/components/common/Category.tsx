@@ -1,7 +1,7 @@
 import React from 'react';
 import Badge from './Badge';
 
-import '../../styles/components/category.scss';
+import '../../styles/components/common/category.scss';
 
 interface ICategory {
   categories: string[];
