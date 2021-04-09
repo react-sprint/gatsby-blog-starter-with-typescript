@@ -13,7 +13,7 @@ import '../styles/pages/index.scss';
 const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.nodes;
   const categories: string[] = ['All', ...data.allMarkdownRemark.group.map((item) => item.fieldValue)];
-  const [category, setCategory] = useCategory() as [string, () => void];
+  const [category, setCategory] = useCategory() as [string, React.Dispatch<React.SetStateAction<string>>];
   // const markdown = data;
 
   if (posts.length === 0) {

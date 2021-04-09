@@ -8,6 +8,8 @@
   outline: 0;
   background-color: $border-gray;
   color: $theme-green;
+  transition: 0.2s;
+  font-weight: 500;
   &.active {
     background-color: $theme-green;
     color: $pale-green;

@@ -3,7 +3,7 @@
   flex-direction: column;
   @include pc {
     display: grid;
-    grid-template-columns: calc(100% - 282px) 282px;
+    grid-template-columns: calc(1024px - 282px) 282px;
     .card-container {
       order: 1;
     }
@@ -30,7 +30,7 @@
     top: 0;
     width: 282px;
     height: 380px;
-    margin-right: 0;
+    margin: 0;
     white-space: normal;
     overflow-x: initial;
   }

@@ -3,6 +3,7 @@
   padding: 0 25px;
   @include pc {
     width: 282px;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
