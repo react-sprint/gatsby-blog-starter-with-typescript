@@ -1,8 +1,9 @@
 import { useEffect, useState, useCallback } from 'react';
 import qs from 'query-string';
+import { globalHistory } from '@reach/router';
 
 const useCategory = () => {
-  const getCategory: string = (qs.parse(window.location.search)?.category as string) || 'All';
+  const getCategory: string = (qs.parse(globalHistory.location.search)?.category as string) || 'All';
   const [category, setCategory] = useState<string>(getCategory);
 
   const selectCategory = useCallback((_category) => {
@@ -11,7 +12,7 @@ const useCategory = () => {
   }, []);
 
   const changeCategory = useCallback(() => {
-    const target = qs.parse(window.location.search)?.category as string;
+    const target = qs.parse(globalHistory.location.search)?.category as string;
     setCategory(target);
   }, []);
 
