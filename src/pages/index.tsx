@@ -4,7 +4,6 @@ import { Link, graphql } from 'gatsby';
 import Bio from '../components/bio';
 import Layout from '../components/layout/index';
 import SEO from '../components/seo';
-import Sample from '../components/sample';
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
@@ -51,7 +50,6 @@ const BlogIndex = ({ data, location }) => {
                   />
                 </section>
               </article>
-              <Sample />
             </li>
           );
         })}
