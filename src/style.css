@@ -1,7 +1,7 @@
 /* CSS Custom Properties Definitions */
 
 :root {
-  --maxWidth-none: "none";
+  --maxWidth-none: 'none';
   --maxWidth-xs: 20rem;
   --maxWidth-sm: 24rem;
   --maxWidth-md: 28rem;
@@ -10,9 +10,9 @@
   --maxWidth-2xl: 42rem;
   --maxWidth-3xl: 48rem;
   --maxWidth-4xl: 56rem;
-  --maxWidth-full: "100%";
+  --maxWidth-full: '100%';
   --maxWidth-wrapper: var(--maxWidth-2xl);
-  --spacing-px: "1px";
+  --spacing-px: '1px';
   --spacing-0: 0;
   --spacing-1: 0.25rem;
   --spacing-2: 0.5rem;
@@ -27,12 +27,10 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily-sans: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --fontFamily-serif: "Merriweather", "Georgia", Cambria, "Times New Roman",
-    Times, serif;
-  --font-body: var(--fontFamily-serif);
+  --fontFamily-sans: Noto Sans KR, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --fontFamily-serif: 'Merriweather', 'Georgia', Cambria, 'Times New Roman', Times, serif;
+  --font-body: var(--fontFamily-sans);
   --font-heading: var(--fontFamily-sans);
   --fontWeight-normal: 400;
   --fontWeight-medium: 500;
@@ -114,7 +112,6 @@ h4,
 h5,
 h6 {
   font-weight: var(--fontWeight-bold);
-  color: var(--color-heading);
 }
 
 h1 {
@@ -159,78 +156,11 @@ h6 > a {
 
 /* Prose */
 
-p {
-  line-height: var(--lineHeight-relaxed);
-  --baseline-multiplier: 0.179;
-  --x-height-multiplier: 0.35;
-  margin: var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0);
-  padding: var(--spacing-0);
-}
-
-ul,
-ol {
-  margin-left: var(--spacing-0);
-  margin-right: var(--spacing-0);
-  padding: var(--spacing-0);
-  margin-bottom: var(--spacing-8);
-  list-style-position: outside;
-  list-style-image: none;
-}
-
-ul li,
-ol li {
-  padding-left: var(--spacing-0);
-  margin-bottom: calc(var(--spacing-8) / 2);
-}
-
-li > p {
-  margin-bottom: calc(var(--spacing-8) / 2);
-}
-
-li *:last-child {
-  margin-bottom: var(--spacing-0);
-}
-
-li > ul {
-  margin-left: var(--spacing-8);
-  margin-top: calc(var(--spacing-8) / 2);
-}
-
-blockquote {
-  color: var(--color-text-light);
-  margin-left: calc(-1 * var(--spacing-6));
-  margin-right: var(--spacing-8);
-  padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6);
-  border-left: var(--spacing-1) solid var(--color-primary);
-  font-size: var(--fontSize-2);
-  font-style: italic;
-  margin-bottom: var(--spacing-8);
-}
-
-blockquote > :last-child {
-  margin-bottom: var(--spacing-0);
-}
-
-blockquote > ul,
-blockquote > ol {
-  list-style-position: inside;
-}
-
-table {
-  width: 100%;
-  margin-bottom: var(--spacing-8);
-  border-collapse: collapse;
-  border-spacing: 0.25rem;
-}
-
-table thead tr th {
-  border-bottom: 1px solid var(--color-accent);
-}
-
 /* Link */
 
 a {
   color: var(--color-primary);
+  word-break: break-all;
 }
 
 a:hover,
@@ -246,7 +176,7 @@ a:focus {
   padding: var(--spacing-10) var(--spacing-5);
 }
 
-.global-wrapper[data-is-root-path="true"] .bio {
+.global-wrapper[data-is-root-path='true'] .bio {
   margin-bottom: var(--spacing-20);
 }
 
@@ -302,26 +232,9 @@ a:focus {
   border-radius: 100%;
 }
 
-.blog-post header h1 {
-  margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
-}
-
-.blog-post header p {
-  font-size: var(--fontSize-2);
-  font-family: var(--font-heading);
-}
-
-.blog-post-nav ul {
-  margin: var(--spacing-0);
-}
-
-.gatsby-highlight {
-  margin-bottom: var(--spacing-8);
-}
-
 /* Media queries */
 
-/* @media (max-width: 42rem) {
+@media (max-width: 42rem) {
   blockquote {
     padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-4);
     margin-left: var(--spacing-0);
@@ -330,4 +243,4 @@ a:focus {
   ol {
     list-style-position: inside;
   }
-} */
+}
