@@ -1,0 +1,64 @@
+.header-area {
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.03);
+  display: flex;
+  justify-content: center;
+
+  @include pc {
+    height: 88px;
+  }
+
+  .header-contents {
+    flex: 1;
+    padding: 0 25px;
+    max-width: 1024px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include pc {
+      padding: 0px;
+    }
+
+    .header-title {
+      color: $theme-green;
+      font-size: 24px;
+      font-weight: 900;
+      cursor: default;
+
+      @include pc {
+        font-size: 28px;
+      }
+    }
+
+    .header-category-container {
+      display: flex;
+      align-items: center;
+
+      :not(:first-child) {
+        margin-left: 32px;
+      }
+
+      h3 {
+        font-size: 14px;
+        color: $gray;
+        font-weight: 500;
+      }
+      button {
+        display: none;
+      }
+
+      @include pc {
+        h3 {
+          font-size: 16px;
+        }
+        button {
+          display: flex;
+        }
+      }
+    }
+  }
+}

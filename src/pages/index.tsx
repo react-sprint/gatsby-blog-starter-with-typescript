@@ -1,17 +1,19 @@
 import * as React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
-import Bio from '../components/bio';
-import Layout from '../components/layout/index';
+import Bio from '../components/Bio';
+import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Card from '../components/common/Card';
+import '../styles/pages/index.scss';
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`;
   const posts = data.allMarkdownRemark.nodes;
+  // const markdown = data;
 
   if (posts.length === 0) {
     return (
-      <Layout location={location} title={siteTitle}>
+      <Layout location={location}>
         <SEO title="All posts" />
         <Bio />
         <p>
@@ -23,37 +25,28 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <SEO title="All posts" />
-      <Bio />
-      <ol style={{ listStyle: `none` }}>
-        {posts.map((post) => {
-          const title = post.frontmatter.title || post.fields.slug;
-
-          return (
-            <li key={post.fields.slug}>
-              <article className="post-list-item" itemScope itemType="http://schema.org/Article">
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
-          );
-        })}
-      </ol>
+      {/* <Bio /> */}
+      {/* 이후에 추가해주세요 ▲ */}
+      <div className="main">
+        <aside className="main-aside">
+          <h3>category</h3>
+        </aside>
+        <div className="index">
+          <h2 className="index-title">
+            {/* <img src={titleIcon} alt="title icon" /> */}
+            POSTS
+          </h2>
+          <div className="index-content">
+            <div className="max-width-1024 card-container">
+              {posts.map((post) => (
+                <Card key={post.fields.slug} post={post} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 };
@@ -70,6 +63,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         excerpt
+        html
         fields {
           slug
         }

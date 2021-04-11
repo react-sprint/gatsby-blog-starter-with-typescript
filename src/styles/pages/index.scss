@@ -1,0 +1,52 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  @include pc {
+    display: grid;
+    grid-template-columns: calc(100% - 282px) 282px;
+    .card-container {
+      order: 1;
+    }
+    .main-aside {
+      order: 2;
+    }
+  }
+}
+
+.main-aside {
+  height: 27px;
+  margin-top: 23px;
+  margin-bottom: 35px;
+  margin-right: -25px;
+  background-color: $light-green;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  @include pc {
+    position: sticky;
+    top: 0;
+    width: 282px;
+    height: 380px;
+    margin-right: 0;
+    white-space: normal;
+    overflow-x: initial;
+  }
+}
+
+.index-title {
+  @include card();
+  margin-bottom: 40px;
+  color: $dark-black;
+  font-size: 20px;
+  font-weight: bold;
+  > img {
+    margin-right: 10px;
+  }
+}
+
+.card-container {
+  @include card();
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}

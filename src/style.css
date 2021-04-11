@@ -43,7 +43,6 @@
   --lineHeight-tight: 1.1;
   --lineHeight-normal: 1.5;
   --lineHeight-relaxed: 1.625;
-  /* 1.200 Minor Third Type Scale */
   --fontSize-0: 0.833rem;
   --fontSize-1: 1rem;
   --fontSize-2: 1.2rem;
@@ -62,7 +61,6 @@
 
 /* HTML elements */
 
-*,
 :after,
 :before {
   box-sizing: border-box;
@@ -81,19 +79,8 @@ body {
   color: var(--color-text);
 }
 
-footer {
-  padding: var(--spacing-6) var(--spacing-0);
-}
-
-hr {
-  background: var(--color-accent);
-  height: 1px;
-  border: 0;
-}
-
 /* Heading */
-
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -152,9 +139,7 @@ h5 > a,
 h6 > a {
   text-decoration: none;
   color: inherit;
-}
-
-/* Prose */
+} */
 
 /* Link */
 
@@ -170,7 +155,7 @@ a:focus {
 
 /* Custom classes */
 
-.global-wrapper {
+/* .global-wrapper {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
   padding: var(--spacing-10) var(--spacing-5);
@@ -230,7 +215,7 @@ a:focus {
   margin-bottom: var(--spacing-0);
   min-width: 50px;
   border-radius: 100%;
-}
+} */
 
 /* Media queries */
 
