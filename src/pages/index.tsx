@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import useCategory from '../Hooks/useCategory';
+import { parse } from 'query-string';
+import { globalHistory } from '@reach/router';
 
 import Bio from '../components/Bio';
 import Layout from '../components/layout';
@@ -13,7 +14,7 @@ import '../styles/pages/index.scss';
 const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.nodes;
   const categories: string[] = ['All', ...data.allMarkdownRemark.group.map((item) => item.fieldValue)];
-  const [category, setCategory] = useCategory() as [string, React.Dispatch<React.SetStateAction<string>>];
+  const [category, setCategory] = useState<string>((parse(globalHistory.location.search)?.category as string) || 'All');
   // const markdown = data;
 
   if (posts.length === 0) {

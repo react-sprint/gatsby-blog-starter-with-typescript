@@ -1,6 +1,5 @@
 import React from 'react';
-import Badge from './Badge';
-
+import { Link } from '@reach/router';
 import '../../styles/components/common/category.scss';
 
 interface ICategory {
@@ -13,9 +12,14 @@ export default function Category({ categories, category, setCategory }: ICategor
   return (
     <div className="category">
       {categories.map((categotyItem) => (
-        <Badge key={categotyItem} id={categotyItem} isActive={categotyItem === category} onClick={setCategory}>
+        <Link
+          key={`badge-${categotyItem}`}
+          to={`/?category=${categotyItem}`}
+          className={`category--item ${categotyItem === category ? 'active' : ''}`}
+          onClick={() => setCategory(categotyItem)}
+        >
           {categotyItem}
-        </Badge>
+        </Link>
       ))}
     </div>
   );
