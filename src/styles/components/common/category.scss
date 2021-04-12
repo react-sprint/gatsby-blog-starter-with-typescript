@@ -1,0 +1,39 @@
+.category {
+  width: auto;
+  padding: 0 25px;
+  @include pc {
+    width: 282px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+  }
+  &--item {
+    display: inline-block;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    padding: 5px 13px;
+    border: 0;
+    border-radius: 30px;
+    outline: 0;
+    background-color: $border-gray;
+    color: $theme-green;
+    transition: 0.2s;
+    font-weight: 500;
+    &.active {
+      background-color: $theme-green;
+      color: $pale-green;
+    }
+    &:hover {
+      transform: translate3d(0, -1px, 0);
+      filter: brightness(1.1);
+    }
+    &:last-child {
+      margin-right: 25px;
+    }
+    @include pc {
+      display: block;
+      border-radius: 4px;
+    }
+  }
+}
