@@ -1,0 +1,21 @@
+body.dark {
+  background-color: $dark-black;
+  text-shadow: $middle-gray;
+  transition: color 0.4s ease-out, background-color 0.4s ease-out;
+
+  .card {
+    &--desc {
+      &__top {
+        color: #fff;
+      }
+    }
+  }
+
+  .toggler {
+    color: $pale-green;
+
+    .toggler-slider:before {
+      background-color: $pale-green;
+    }
+  }
+}
