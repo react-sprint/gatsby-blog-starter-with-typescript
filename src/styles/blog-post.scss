@@ -76,14 +76,14 @@ em {
 }
 
 blockquote {
-  margin: 16px 0;
+  margin: 0;
   padding: 30px 24px;
   background: #e7f2ec;
   box-sizing: border-box;
-  border-left: 4px solid;
-  border-color: #55af7a;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-left: $spacing-1 solid;
+  border-color: $theme-green;
+  border-top-left-radius: $spacing-1;
+  border-bottom-left-radius: $spacing-1;
   > :last-child {
     margin-bottom: var(--spacing-0);
   }
@@ -142,11 +142,11 @@ ol {
 ul li,
 ol li {
   padding-left: $spacing-0;
-  margin-bottom: calc($spacing-8 / 2);
+  margin-bottom: calc(#{$spacing-8} / 2);
 }
 
 li > p {
-  margin-bottom: calc($spacing-8 / 2);
+  margin-bottom: calc(#{$spacing-8} / 2);
 }
 
 li *:last-child {
