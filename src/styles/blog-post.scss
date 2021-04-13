@@ -155,7 +155,7 @@ li *:last-child {
 
 li > ul {
   margin-left: $spacing-8;
-  margin-top: calc($spacing-8 / 2);
+  margin-top: calc(#{$spacing-8} / 2);
 }
 
 table {
