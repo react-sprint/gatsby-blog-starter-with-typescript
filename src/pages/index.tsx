@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Card from '../components/common/Card';
 import '../styles/pages/index.scss';
+import titleIcon from '../images/title-icon.svg';
 
 const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.nodes;
@@ -35,7 +36,7 @@ const BlogIndex = ({ data, location }) => {
         </aside>
         <div className="index">
           <h2 className="index-title">
-            {/* <img src={titleIcon} alt="title icon" /> */}
+            <img src={titleIcon} alt="title icon" />
             POSTS
           </h2>
           <div className="index-content">

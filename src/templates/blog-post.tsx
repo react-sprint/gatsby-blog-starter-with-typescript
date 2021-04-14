@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import '../styles/blog-post.scss';
 import '../styles/code.scss';
+import arrowIcon from '../images/arrow.svg';
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark;
@@ -17,7 +18,9 @@ const BlogPostTemplate = ({ data, location }) => {
       <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
       <article className="blog-post" itemScope itemType="http://schema.org/Article">
         <header>
-          <p className="category">Home {'>'} 카테고리명</p>
+          <p className="category">
+            <span>HOME</span> <img src={arrowIcon} /> <span>카테고리명</span>
+          </p>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>SubTitle {post.frontmatter.date}</p>
         </header>
