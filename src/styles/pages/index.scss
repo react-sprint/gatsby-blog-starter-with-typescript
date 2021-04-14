@@ -13,11 +13,9 @@
   }
 }
 
-.main-aside {
+.aside {
   width: 100vw;
-  // height: 27px;
   margin: 23px -25px 35px;
-  // background-color: $light-green;
   white-space: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
@@ -33,6 +31,10 @@
     }
   }
   &-tag-title {
+    @include point-font;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    margin-left: 10px;
     color: $dark-black;
   }
   &-tag-container {

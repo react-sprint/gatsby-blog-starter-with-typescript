@@ -1,14 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../../styles/components/common/toggler.scss';
-
-type Color = 'dark' | 'light';
-
-const COLOR = {
-  LOCAL_STORAGE_KEY: 'color-mode',
-  MEDIA_KEY: '(prefers-color-scheme: dark)',
-  DARK_MODE: 'dark' as Color,
-  LIGHT_MODE: 'light' as Color,
-};
+import { Color, COLOR } from '../../constants/togglerType';
 
 const getDefaultColorMode = (): Color => {
   const defaultColorMode = window.localStorage.getItem(COLOR.LOCAL_STORAGE_KEY);
@@ -47,7 +39,12 @@ const Toggler = () => {
   return (
     <label>
       <div className="toggler">
-        <input type="checkbox" onChange={toggleColorHandler} checked={colorMode === COLOR.DARK_MODE} />
+        <input
+          type="checkbox"
+          className="toggler-checkbox"
+          onChange={toggleColorHandler}
+          checked={colorMode === COLOR.DARK_MODE}
+        />
         <span className={`toggler-slider toggler-slider-${colorMode}`} />
         <span className={`toggler-text toggler-text-${colorMode}`}>{colorMode}</span>
       </div>

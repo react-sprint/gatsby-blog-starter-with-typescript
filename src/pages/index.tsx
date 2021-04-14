@@ -10,7 +10,7 @@ import Category from '../components/common/Category';
 import Card from '../components/common/Card';
 import Toggler from '../components/common/Toggler';
 import titleIcon from '../images/title-icon.svg';
-import tag from '../images/tag.svg';
+import tagIcon from '../images/tag-icon.svg';
 
 import '../styles/pages/index.scss';
 
@@ -39,11 +39,11 @@ const BlogIndex = ({ data, location }) => {
       {/* <Bio /> */}
       {/* 이후에 추가해주세요 ▲ */}
       <div className="main">
-        <aside className="main-aside">
-          <div className="main-aside-header">
-            <div className="main-aside-tag-container">
-              <img src={tag} alt="tag" className="main-aside-tag-img" />
-              <h2 className="main-aside-tag-title">TAG</h2>
+        <aside className="aside main-aside">
+          <div className="aside-header">
+            <div className="aside-tag-container">
+              <img src={tagIcon} alt="tag" className="aside-tag-img" />
+              <h2 className="aside-tag-title">TAG</h2>
             </div>
             <Toggler />
           </div>

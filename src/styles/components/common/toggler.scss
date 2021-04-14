@@ -6,30 +6,31 @@
   border-radius: 22px;
   border: 1px solid;
 
-  .toggler-text {
+  &-text {
+    @include point-font;
     font-size: 11px;
-    font-weight: lighter;
+    font-weight: 500;
   }
 
-  .toggler-text-light {
-    top: 4px;
+  &-text-light {
+    top: 3px;
     right: 6px;
     position: absolute;
   }
 
-  .toggler-text-dark {
-    left: 4px;
-    top: 4px;
+  &-text-dark {
+    top: 3px;
+    left: 5px;
     position: absolute;
   }
 
-  input {
+  &-checkbox {
     opacity: 0;
     width: 0;
     height: 0;
   }
 
-  .toggler-slider {
+  &-slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -41,15 +42,15 @@
     border-radius: 34px;
   }
 
-  .toggler-slider-light:before {
+  &-slider-light:before {
     background-image: url(../../../images/light-toggler.svg);
   }
 
-  .toggler-slider-dark:before {
+  &-slider-dark:before {
     background-image: url(../../../images/dark-toggler.svg);
   }
 
-  .toggler-slider:before {
+  &-slider:before {
     position: absolute;
     content: '';
     height: 16px;
@@ -63,7 +64,7 @@
     -webkit-transition: 0.4s;
   }
 
-  input:checked + .toggler-slider:before {
+  input:checked + &-slider:before {
     -webkit-transform: translateX(30px);
     -ms-transform: translateX(30px);
     transform: translateX(30px);
