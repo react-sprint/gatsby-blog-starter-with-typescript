@@ -44,8 +44,8 @@ const BlogIndex = ({ data, location }) => {
             <img src={titleIcon} alt="title icon" />
             POSTS
           </h2>
-          <div className="index-content">
-            <div className="max-width-1024 card-container">
+          <div>
+            <div className="card-container">
               {posts
                 .filter((post) => (category === 'All' ? post : category === post.frontmatter.category))
                 .map((post) => (
