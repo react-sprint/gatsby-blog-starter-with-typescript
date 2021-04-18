@@ -2,16 +2,46 @@
 @import '../../styles/light-theme.scss';
 
 div.global-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include pc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 main.global-main {
   max-width: 1024px;
-  padding: 0 25px;
+  padding: 0 16px;
   @include pc {
     margin-top: 88px;
     padding: 0;
+  }
+}
+
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+html {
+  line-height: $lineHeight-normal;
+  font-size: $fontSize-root;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font-family-sans;
+  font-size: $fontSize-1;
+}
+
+@media (max-width: 42rem) {
+  blockquote {
+    padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-4);
+    margin-left: var(--spacing-0);
+  }
+  ul,
+  ol {
+    list-style-position: inside;
   }
 }
