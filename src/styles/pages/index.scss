@@ -3,7 +3,7 @@
   flex-direction: column;
   @include pc {
     display: grid;
-    grid-template-columns: calc(100% - 282px) 282px;
+    grid-template-columns: calc(1024px - 282px) 282px;
     .card-container {
       order: 1;
     }
@@ -14,20 +14,23 @@
 }
 
 .main-aside {
+  width: 100vw;
   height: 27px;
-  margin-top: 23px;
-  margin-bottom: 35px;
-  margin-right: -25px;
+  margin: 23px -25px 35px;
   background-color: $light-green;
   white-space: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   @include pc {
     position: sticky;
     top: 0;
     width: 282px;
     height: 380px;
-    margin-right: 0;
+    margin: 0;
     white-space: normal;
     overflow-x: initial;
   }

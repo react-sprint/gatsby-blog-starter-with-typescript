@@ -1,9 +1,8 @@
 ---
 title: Infinite Scroll Util
-date: 2021-03-06 22:03:80
-category: react
-thumbnail: { thumbnailSrc }
-draft: false
+date: '2015-05-28T22:40:32.169Z'
+description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
+category: TypeScript
 ---
 
 ![infinite-scroll-shift](../assets/infinite-scroll-shift.png)

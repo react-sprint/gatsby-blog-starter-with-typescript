@@ -3,10 +3,10 @@ import { Link, graphql } from 'gatsby';
 
 import Bio from '../components/Bio';
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import arrowIcon from '../images/arrow.svg';
+import SEO from '../components/Seo';
 import '../styles/blog-post.scss';
 import '../styles/code.scss';
-import arrowIcon from '../images/arrow.svg';
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark;

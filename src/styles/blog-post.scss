@@ -1,5 +1,13 @@
 .blog-post {
   max-width: 42rem;
+  margin-top: 72px;
+
+  @include pc {
+    margin-top: 0px;
+  }
+  a {
+    word-break: break-all;
+  }
 
   h1,
   h2,
