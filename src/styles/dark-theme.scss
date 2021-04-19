@@ -14,8 +14,30 @@ body.dark {
   .toggler {
     color: $pale-green;
 
-    .toggler-slider:before {
+    &-slider:before {
       background-color: $pale-green;
+    }
+  }
+
+  .index-title {
+    color: $white;
+  }
+
+  .header-area {
+    .header-contents {
+      .header-category-container {
+        h3 {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .main-aside {
+    .aside-header {
+      .aside-tag-title {
+        color: $white;
+      }
     }
   }
 }

@@ -31,10 +31,10 @@ const Toggler = () => {
   };
 
   useEffect(() => {
-    getDefaultColorMode() === COLOR.DARK_MODE
+    colorMode === COLOR.DARK_MODE
       ? document.body.classList.add(COLOR.DARK_MODE)
       : document.body.classList.add(COLOR.LIGHT_MODE);
-  }, []);
+  }, [colorMode]);
 
   return (
     <label>
