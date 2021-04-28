@@ -13,15 +13,34 @@
   }
 }
 
-.main-aside {
+.aside {
   width: 100vw;
-  height: 27px;
   margin: 23px -25px 35px;
-  background-color: $light-green;
   white-space: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
   -ms-overflow-style: none;
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
+    margin: 0px;
+    @include pc {
+      margin-bottom: 30px;
+      padding: 0;
+    }
+  }
+  &-tag-title {
+    @include point-font;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    margin-left: 10px;
+    color: $dark-black;
+  }
+  &-tag-container {
+    display: flex;
+    justify-content: start;
+  }
   &::-webkit-scrollbar {
     display: none;
   }

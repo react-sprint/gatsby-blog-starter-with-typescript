@@ -1,0 +1,72 @@
+.toggler {
+  position: relative;
+  width: 52px;
+  height: 22px;
+  box-sizing: border-box;
+  border-radius: 22px;
+  border: 1px solid;
+
+  &-text {
+    @include point-font;
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  &-text-light {
+    top: 3px;
+    right: 6px;
+    position: absolute;
+  }
+
+  &-text-dark {
+    top: 3px;
+    left: 5px;
+    position: absolute;
+  }
+
+  &-checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+
+  &-slider-light:before {
+    background-image: url(../../../images/light-toggler.svg);
+  }
+
+  &-slider-dark:before {
+    background-image: url(../../../images/dark-toggler.svg);
+  }
+
+  &-slider:before {
+    position: absolute;
+    content: '';
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-size: cover;
+    left: 1px;
+    bottom: 1px;
+    border: 1px solid;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+  }
+
+  input:checked + &-slider:before {
+    -webkit-transform: translateX(30px);
+    -ms-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+}
