@@ -22,14 +22,22 @@ interface Post {
 
 interface Props {
   post: Post;
+  thumbnail: string | null;
 }
 
-export default function Card({ post }: Props) {
+export default function Card({ post, thumbnail }: Props) {
   const title = post.frontmatter.title || post.fields.slug;
+
   return (
     <Link to={post.fields.slug}>
       <div className="card">
-        <div className="card--image" />
+        {thumbnail ? (
+          <div className="card--image" dangerouslySetInnerHTML={{ __html: thumbnail }} />
+        ) : (
+          <div className={`card--image no-thumbnail theme-color-${Math.floor(Math.random() * 3 + 1)}`}>
+            <span>{post.frontmatter.title.split(' ')[0]}</span>
+          </div>
+        )}
         <div className="card--desc">
           <div className="card--desc__top">
             <h2 className="title">{title}</h2>
@@ -50,29 +58,4 @@ export default function Card({ post }: Props) {
       </div>
     </Link>
   );
-}
-
-// 기존 소스 참고용
-{
-  /* <li key={post.fields.slug}>
-  <article className="post-list-item" itemScope itemType="http://schema.org/Article">
-    <header>
-      <h2>
-        <Link to={post.fields.slug} itemProp="url">
-          <span itemProp="headline">{title}</span>
-        </Link>
-      </h2>
-      <small>{post.frontmatter.date}</small>
-    </header>
-    <section>
-      <p
-        dangerouslySetInnerHTML={{
-          __html: post.frontmatter.description || post.excerpt,
-        }}
-        itemProp="description"
-      />
-    </section>
-  </article>
-  <Sample />
-</li> */
 }
