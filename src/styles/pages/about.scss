@@ -1,29 +1,27 @@
 .about-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @extend .display_layout;
   flex-wrap: wrap;
-  width: 360px;
+  width: 380px;
 }
 
 .about-name {
-  display: flex;
-  justify-content: center;
+  @extend .display_layout;
   font-size: 50px;
   color: #363739;
   line-height: 165%;
   font-weight: bold;
+  margin: 0px;
 }
 
 .self-introduction {
   font-size: 14px;
   line-height: 130%;
   letter-spacing: -0.02em;
-  max-width: 364px;
   height: 42px;
   color: #585858;
   margin-top: 16px;
   text-align: center;
+  min-width: 300px;
 }
 
 .profile-image {
@@ -32,10 +30,9 @@
   margin-top: 28px;
 }
 
-.about-mail {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.about-tag {
+  @extend .display_layout;
+  flex-wrap: wrap;
   width: 300px;
   height: 40px;
   font-size: 13px;
@@ -46,9 +43,14 @@
   .tag-image {
     margin-right: 10px;
   }
+
+  div {
+    margin-left: 30%;
+    width: 300px;
+  }
 }
 
-.about-sns-url {
+.about-social {
   display: flex;
   justify-content: space-between;
   width: 148px;
@@ -57,9 +59,7 @@
 }
 
 .posts-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @extend .display_layout;
   width: 274px;
   height: 54px;
   .posts-text {
@@ -78,4 +78,14 @@
     transform: translate3d(0, -3px, 0);
     box-shadow: 0px 4px 10px rgba(85, 175, 122, 0.4);
   }
+}
+
+img {
+  cursor: pointer;
+}
+
+.display_layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -19,6 +19,12 @@ main.global-main {
   }
 }
 
+p.self-introduction {
+  @include pc {
+    max-width: 364px;
+  }
+}
+
 :after,
 :before {
   box-sizing: border-box;
