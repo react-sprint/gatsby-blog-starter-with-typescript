@@ -19,7 +19,7 @@ function Header({ headerTitle }: HeaderProps) {
           <Link to="/">
             <h3>POSTS</h3>
           </Link>
-          <Link to="/">
+          <Link to="/about">
             <h3>ABOUT</h3>
           </Link>
           <Button

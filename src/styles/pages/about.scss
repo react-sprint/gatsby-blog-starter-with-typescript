@@ -1,0 +1,81 @@
+.about-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 360px;
+}
+
+.about-name {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  color: #363739;
+  line-height: 165%;
+  font-weight: bold;
+}
+
+.self-introduction {
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: -0.02em;
+  max-width: 364px;
+  height: 42px;
+  color: #585858;
+  margin-top: 16px;
+  text-align: center;
+}
+
+.profile-image {
+  width: 216px;
+  height: 216px;
+  margin-top: 28px;
+}
+
+.about-mail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 40px;
+  font-size: 13px;
+  margin-top: 45px;
+  color: #585858;
+  line-height: 21.45px;
+
+  .tag-image {
+    margin-right: 10px;
+  }
+}
+
+.about-sns-url {
+  display: flex;
+  justify-content: space-between;
+  width: 148px;
+  height: 28px;
+  margin-top: 36px;
+}
+
+.posts-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 274px;
+  height: 54px;
+  .posts-text {
+    font-weight: 700;
+    font-size: 20px;
+    color: $white;
+  }
+  background-color: $theme-green;
+  border-radius: 30px;
+  margin-top: 50px;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: $theme-green;
+    transition: 0.2s;
+    transform: translate3d(0, -3px, 0);
+    box-shadow: 0px 4px 10px rgba(85, 175, 122, 0.4);
+  }
+}
