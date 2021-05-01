@@ -10,7 +10,11 @@ const Layout = ({ location, children }) => {
   const isRootPath = location.pathname === rootPath;
 
   if (isRootPath) {
-    headerTitle = <div onClick={() => window.location.reload()}>LOGO</div>;
+    headerTitle = (
+      <div className="logo" onClick={() => window.location.reload()}>
+        LOGO
+      </div>
+    );
   } else {
     headerTitle = <Link to="/">LOGO</Link>;
   }
