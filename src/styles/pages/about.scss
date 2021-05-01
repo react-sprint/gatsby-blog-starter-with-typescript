@@ -1,7 +1,6 @@
 .about-page {
   @extend .display_layout;
   flex-wrap: wrap;
-  width: 380px;
 }
 
 .about-name {
@@ -21,32 +20,23 @@
   color: #585858;
   margin-top: 16px;
   text-align: center;
-  min-width: 300px;
 }
 
 .profile-image {
-  width: 216px;
-  height: 216px;
   margin-top: 28px;
 }
 
-.about-tag {
+.about-mail {
   @extend .display_layout;
-  flex-wrap: wrap;
   width: 300px;
   height: 40px;
-  font-size: 13px;
+  font-size: 15px;
   margin-top: 45px;
   color: #585858;
   line-height: 21.45px;
 
   .tag-image {
     margin-right: 10px;
-  }
-
-  div {
-    margin-left: 30%;
-    width: 300px;
   }
 }
 

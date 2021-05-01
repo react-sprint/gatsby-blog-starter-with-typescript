@@ -12,7 +12,8 @@ module.exports = {
       git: `https://github.com/`,
       instagram: `https://www.instagram.com/`,
       twitter: `https://twitter.com/?lang=ko`,
-      mail: `gmail.com`,
+      linkdein: `https://kr.linkedin.com`,
+      mail: `admin@gmail.com`,
     },
   },
   plugins: [

@@ -91,6 +91,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       git: String
       instagram: String
       twitter: String
+      linkdein: String
       mail: String
     }
 
