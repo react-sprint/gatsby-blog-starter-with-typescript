@@ -17,6 +17,7 @@ const About = ({ location }) => {
           author {
             name
             summary
+            selfIntroduction
           }
           social {
             git
@@ -38,7 +39,7 @@ const About = ({ location }) => {
       <Layout location={location}>
         <div className="about-page">
           <h2 className="about-name">{author.name}</h2>
-          <p className="self-introduction">{author.summary}</p>
+          <p className="self-introduction">{author.selfIntroduction}</p>
 
           <img className="profile-image" src={profile} alt="profile" />
           <div className="about-mail">

@@ -4,6 +4,7 @@ module.exports = {
     author: {
       name: `jeongyun.lee`,
       summary: `FE Engineer`,
+      selfIntroduction: `Hello, I'm Frontend Developer`,
     },
     description: `blog starter`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
