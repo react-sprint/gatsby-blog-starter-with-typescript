@@ -1,13 +1,13 @@
 import React from 'react';
 import '../styles/pages/about.scss';
+import { Link } from '@reach/router';
+import { useStaticQuery, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import profile from '../images/profile.svg';
 import tag from '../images/tag.svg';
 import instagram from '../images/insta-green.svg';
 import git from '../images/git-green.svg';
 import twitter from '../images/twitter.svg';
-import { Link } from '@reach/router';
-import { useStaticQuery, graphql } from 'gatsby';
 
 const About = ({ location }) => {
   const data = useStaticQuery(graphql`
