@@ -17,23 +17,20 @@
     overflow: auto;
   }
   &--image {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
     border: 1px solid $border-gray;
     border-radius: 4px 4px 0 0;
     height: 168px;
+    > img {
+      width: 100%;
+    }
     @include pc {
       height: 185px;
     }
-    img {
-      height: auto !important;
-      top: 50% !important;
-      transform: translate(0, -50%) !important;
-    }
     &.no-thumbnail {
-      display: flex;
-      justify-content: center;
-      align-items: center;
       box-sizing: border-box;
       padding: 20px;
       span {

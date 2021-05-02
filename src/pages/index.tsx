@@ -28,7 +28,10 @@ const BlogIndex = ({ data, location }) => {
       return null;
     });
     const img = re.exec(str);
-    if (img && img.length) return img[0];
+    if (img && img.length) {
+      console.log(`${img[0].split('srcset')[0]}/>`);
+      return `${img[0].split('srcset')[0]}/>`;
+    }
     return null;
   };
 
