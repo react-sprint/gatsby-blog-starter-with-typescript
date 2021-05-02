@@ -19,7 +19,7 @@ const BlogPostTemplate = ({ data, location }) => {
       <article className="blog-post" itemScope itemType="http://schema.org/Article">
         <header>
           <p className="category">
-            <span>HOME</span> <img src={arrowIcon} /> <span>카테고리명</span>
+            <span>HOME</span> <img src={arrowIcon} alt={`${arrowIcon}-icon`} /> <span>카테고리명</span>
           </p>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>SubTitle {post.frontmatter.date}</p>
