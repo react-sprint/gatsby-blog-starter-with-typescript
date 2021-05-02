@@ -1,10 +1,12 @@
 .toggler {
   position: relative;
+  float: right;
   width: 52px;
   height: 22px;
   box-sizing: border-box;
   border-radius: 22px;
   border: 1px solid;
+  cursor: pointer;
 
   &-text {
     @include point-font;
@@ -40,6 +42,7 @@
     -webkit-transition: 0.4s;
     transition: 0.4s;
     border-radius: 34px;
+    margin-bottom: 0.8px;
   }
 
   &-slider-light:before {
@@ -57,7 +60,7 @@
     width: 16px;
     border-radius: 50%;
     background-size: cover;
-    left: 1px;
+    left: 2px;
     bottom: 1px;
     border: 1px solid;
     transition: 0.4s;
