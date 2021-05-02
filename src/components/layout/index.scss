@@ -19,38 +19,6 @@ main.global-main {
   }
 }
 
-p.self-introduction {
-  @include pc {
-    width: 300px;
-    max-width: 364px;
-  }
-
-  @include mobile {
-    max-width: 270px;
-  }
-}
-
-div.about-page {
-  @include pc {
-    width: 300px;
-  }
-  @include mobile {
-    width: 100%;
-  }
-}
-
-img.profile-image {
-  @include pc {
-    width: 216px;
-    height: 216px;
-  }
-
-  @include mobile {
-    width: 162px;
-    height: 162px;
-  }
-}
-
 :after,
 :before {
   box-sizing: border-box;

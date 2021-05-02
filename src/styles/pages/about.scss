@@ -1,6 +1,14 @@
 .about-page {
   @extend .display_layout;
   flex-wrap: wrap;
+
+  @include pc {
+    width: 300px;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .about-name {
@@ -20,10 +28,29 @@
   color: #585858;
   margin-top: 16px;
   text-align: center;
+
+  @include pc {
+    width: 300px;
+    max-width: 364px;
+  }
+
+  @include mobile {
+    max-width: 270px;
+  }
 }
 
 .profile-image {
   margin-top: 28px;
+
+  @include pc {
+    width: 216px;
+    height: 216px;
+  }
+
+  @include mobile {
+    width: 162px;
+    height: 162px;
+  }
 }
 
 .about-mail {
