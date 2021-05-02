@@ -93,6 +93,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       instagram: String
       twitter: String
       linkdein: String
+      facebook: String
       mail: String
     }
 

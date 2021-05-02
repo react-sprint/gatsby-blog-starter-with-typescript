@@ -29,6 +29,12 @@
   color: $white;
   border-radius: 10px;
   transition: 0.2s;
+  cursor: pointer;
+  img {
+    width: 18px;
+    height: 18px;
+    padding: 3px;
+  }
 
   &:hover {
     transition: 0.2s;

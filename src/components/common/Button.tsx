@@ -12,7 +12,7 @@ interface ButtonProps {
 const Button = ({ text, color, icon, handleClick }: ButtonProps) => (
   <button className={color} onClick={handleClick}>
     {text}
-    <img src={icon} alt="" />
+    <img src={icon} alt={`${icon}-icon`} />
   </button>
 );
 export default Button;

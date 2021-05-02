@@ -3,11 +3,13 @@ import '../styles/pages/about.scss';
 import { Link } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
 import Layout from '../components/layout';
-import profile from '../images/profile.svg';
-import tag from '../images/tag.svg';
-import instagram from '../images/insta-green.svg';
-import git from '../images/git-green.svg';
-import twitter from '../images/twitter.svg';
+import profile from '../images/about/profile.svg';
+import tag from '../images/about/tag.svg';
+import instagram from '../images/about/instagram.svg';
+import git from '../images/about/git.svg';
+import twitter from '../images/about/twitter.svg';
+import facebook from '../images/about/facebook.svg';
+import linkdein from '../images/about/linkdein.svg';
 
 const About = ({ location }) => {
   const data = useStaticQuery(graphql`
@@ -24,6 +26,7 @@ const About = ({ location }) => {
             instagram
             twitter
             linkdein
+            facebook
             mail
           }
         }
@@ -56,6 +59,16 @@ const About = ({ location }) => {
             )}
             {social.twitter ? (
               <img src={twitter} alt="twitter" onClick={() => window.open(`${social.twitter}`)} />
+            ) : (
+              <></>
+            )}
+            {social.facebook ? (
+              <img src={facebook} alt="facebook" onClick={() => window.open(`${social.facebook}`)} />
+            ) : (
+              <></>
+            )}
+            {social.linkdein ? (
+              <img src={linkdein} alt="linkdein" onClick={() => window.open(`${social.linkdein}`)} />
             ) : (
               <></>
             )}

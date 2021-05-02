@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Gatsby Blog`,
     author: {
       name: `jeongyun.lee`,
       summary: `FE Engineer`,
@@ -14,6 +14,7 @@ module.exports = {
       instagram: `https://www.instagram.com/`,
       twitter: `https://twitter.com/?lang=ko`,
       linkdein: `https://kr.linkedin.com`,
+      facebook: `https://facebook.com`,
       mail: `admin@gmail.com`,
     },
   },

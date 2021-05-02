@@ -1,22 +1,26 @@
 .about-page {
   @extend .display_layout;
   flex-wrap: wrap;
+  flex-direction: column;
 
   @include pc {
     width: 300px;
+    // padding: 88px 0;
   }
 
   @include mobile {
     width: 100%;
+    // padding: 55px 0;
   }
 }
 
 .about-name {
   @extend .display_layout;
   font-size: 50px;
-  color: #363739;
+  color: $fontWeight-black;
   line-height: 165%;
-  font-weight: bold;
+  text-align: center;
+  word-break: break-all;
   margin: 0px;
 }
 
@@ -70,9 +74,17 @@
 .about-social {
   display: flex;
   justify-content: space-between;
-  width: 148px;
+  width: 200px;
   height: 28px;
   margin-top: 36px;
+
+  img {
+    width: 18px;
+    height: 18px;
+    padding: 7px;
+    background-color: $theme-green;
+    border-radius: 50%;
+  }
 }
 
 .posts-box {

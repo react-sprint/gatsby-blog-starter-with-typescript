@@ -1,10 +1,22 @@
 import * as React from 'react';
 import { Link } from '@reach/router';
 import Header from '../common/Header';
-
+import { useStaticQuery, graphql } from 'gatsby';
 import './index.scss';
 
 const Layout = ({ location, children }) => {
+  const data = useStaticQuery(graphql`
+    query LayoutQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
+
+  const title = data.site.siteMetadata?.title;
+
   let headerTitle: JSX.Element;
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath = location.pathname === rootPath;
@@ -12,11 +24,11 @@ const Layout = ({ location, children }) => {
   if (isRootPath) {
     headerTitle = (
       <div className="logo" onClick={() => window.location.reload()}>
-        LOGO
+        {title}
       </div>
     );
   } else {
-    headerTitle = <Link to="/">LOGO</Link>;
+    headerTitle = <Link to="/">{title}</Link>;
   }
 
   return (

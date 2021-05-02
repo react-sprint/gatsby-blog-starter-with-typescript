@@ -1,9 +1,8 @@
 import React from 'react';
 import '../../styles/components/common/header.scss';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import { BUTTON_COLOR } from '../../constants/buttonType';
-import Git from '../../images/git.svg';
-import { githubURl } from '../../constants/userData';
+import Git from '../../images/about/git.svg';
 import Button from './Button';
 
 interface HeaderProps {
@@ -11,6 +10,20 @@ interface HeaderProps {
 }
 
 function Header({ headerTitle }: HeaderProps) {
+  const data = useStaticQuery(graphql`
+    query gitUrlQuery {
+      site {
+        siteMetadata {
+          social {
+            git
+          }
+        }
+      }
+    }
+  `);
+
+  const gitUrl = data.site.siteMetadata?.social;
+
   return (
     <header className="header-area">
       <div className="header-contents">
@@ -22,14 +35,18 @@ function Header({ headerTitle }: HeaderProps) {
           <Link to="/about">
             <h3>ABOUT</h3>
           </Link>
-          <Button
-            text="GITHUB"
-            color={BUTTON_COLOR.GREEN}
-            icon={Git}
-            handleClick={() => {
-              window.open(`${githubURl}`);
-            }}
-          />
+          {gitUrl.git ? (
+            <Button
+              text="GITHUB"
+              color={BUTTON_COLOR.GREEN}
+              icon={Git}
+              handleClick={() => {
+                window.open(`${gitUrl.git}`);
+              }}
+            />
+          ) : (
+            <> </>
+          )}
         </div>
       </div>
     </header>
