@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from '@reach/router';
-import Header from '../common/Header';
 import { useStaticQuery, graphql } from 'gatsby';
+import Header from '../common/Header';
 import './index.scss';
 
 const Layout = ({ location, children }) => {
