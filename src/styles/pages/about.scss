@@ -81,12 +81,15 @@
   height: 28px;
   margin-top: 36px;
 
-  img {
-    width: 18px;
-    height: 18px;
-    padding: 7px;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
     background-color: $theme-green;
     border-radius: 50%;
+    box-sizing: border-box;
   }
 }
 

@@ -10,11 +10,10 @@ import '../styles/code.scss';
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark;
-  const siteTitle = data.site.siteMetadata?.title || `Title`;
   const { previous, next } = data;
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
       <article className="blog-post" itemScope itemType="http://schema.org/Article">
         <header>

@@ -51,24 +51,38 @@ const About = ({ location }) => {
           </div>
 
           <div className="about-social">
-            {social.git ? <img src={git} alt="git" onClick={() => window.open(`${social.git}`)} /> : <></>}
+            {social.git ? (
+              <div>
+                <img src={git} alt="git" onClick={() => window.open(`${social.git}`)} />{' '}
+              </div>
+            ) : (
+              <></>
+            )}
             {social.instagram ? (
-              <img src={instagram} alt="instagram" onClick={() => window.open(`${social.instagram}`)} />
+              <div>
+                <img src={instagram} alt="instagram" onClick={() => window.open(`${social.instagram}`)} />
+              </div>
             ) : (
               <></>
             )}
             {social.twitter ? (
-              <img src={twitter} alt="twitter" onClick={() => window.open(`${social.twitter}`)} />
+              <div>
+                <img src={twitter} alt="twitter" onClick={() => window.open(`${social.twitter}`)} />
+              </div>
             ) : (
               <></>
             )}
             {social.facebook ? (
-              <img src={facebook} alt="facebook" onClick={() => window.open(`${social.facebook}`)} />
+              <div>
+                <img src={facebook} alt="facebook" onClick={() => window.open(`${social.facebook}`)} />
+              </div>
             ) : (
               <></>
             )}
             {social.linkdein ? (
-              <img src={linkdein} alt="linkdein" onClick={() => window.open(`${social.linkdein}`)} />
+              <div>
+                <img src={linkdein} alt="linkdein" onClick={() => window.open(`${social.linkdein}`)} />
+              </div>
             ) : (
               <></>
             )}
