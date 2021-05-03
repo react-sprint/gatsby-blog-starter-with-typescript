@@ -14,12 +14,17 @@
 
 .about-name {
   @extend .display_layout;
-  font-size: 50px;
-  color: $fontWeight-black;
+  font-size: 45px;
+  font-weight: $fontWeight-black;
+  color: $black;
   line-height: 165%;
   text-align: center;
   word-break: break-all;
   margin: 0px;
+
+  @include mobile {
+    padding-top: 55px;
+  }
 }
 
 .self-introduction {
