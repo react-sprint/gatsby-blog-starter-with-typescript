@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import { parse } from 'query-string';
 import { globalHistory } from '@reach/router';
 
-// import Bio from '../components/Bio';
 import Layout from '../components/layout';
 import SEO from '../components/Seo';
 import Category from '../components/common/Category';
@@ -20,17 +19,16 @@ const BlogIndex = ({ data, location }) => {
   const [category, setCategory] = useState<string>((parse(globalHistory.location.search)?.category as string) || 'All');
 
   const getThumbnail = (postIndex) => {
-    const re = /<img[^>]+src\s*=\s*['"]([^'"]+)['"][^>]*>/g;
-    const str = data.allMarkdownRemark.nodes.map((htmlCode, htmlIndex) => {
+    const regex = /<img[^>]+src\s*=\s*['"]([^'"]+)['"][^>]*>/g;
+    const htmlString = data.allMarkdownRemark.nodes.map((htmlCode, htmlIndex) => {
       if (postIndex === htmlIndex) {
         return htmlCode.html;
       }
       return null;
     });
-    const img = re.exec(str);
-    if (img && img.length) {
-      console.log(`${img[0].split('srcset')[0]}/>`);
-      return `${img[0].split('srcset')[0]}/>`;
+    const image = regex.exec(htmlString);
+    if (image && image.length) {
+      return `${image[0].split('srcset')[0]}/>`;
     }
     return null;
   };
@@ -39,7 +37,6 @@ const BlogIndex = ({ data, location }) => {
     return (
       <Layout location={location}>
         <SEO title="All posts" />
-        {/* <Bio /> */}
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the directory you specified for the
           gatsby-source-filesystem plugin in gatsby-config.js).
@@ -51,7 +48,6 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location}>
       <SEO title="All posts" />
-      {/* <Bio /> */}
       <div className="main">
         <aside className="aside main-aside">
           <div className="aside-header">

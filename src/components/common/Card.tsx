@@ -26,7 +26,9 @@ interface Props {
 }
 
 export default function Card({ post, thumbnail }: Props) {
-  const title = post.frontmatter.title || post.fields.slug;
+  const title = post.frontmatter.title.split(' ')[0] || post.fields.slug;
+  const themeSize = 3;
+  const themeStartNumber = 1;
 
   return (
     <Link to={post.fields.slug}>
@@ -34,8 +36,12 @@ export default function Card({ post, thumbnail }: Props) {
         {thumbnail ? (
           <div className="card--image" dangerouslySetInnerHTML={{ __html: thumbnail }} />
         ) : (
-          <div className={`card--image no-thumbnail theme-color-${Math.floor(Math.random() * 3 + 1)}`}>
-            <span>{post.frontmatter.title.split(' ')[0]}</span>
+          <div
+            className={`card--image no-thumbnail theme-color-${Math.floor(
+              Math.random() * themeSize + themeStartNumber,
+            )}`}
+          >
+            <span>{title}</span>
           </div>
         )}
         <div className="card--desc">
