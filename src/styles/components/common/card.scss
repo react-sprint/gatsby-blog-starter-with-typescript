@@ -5,7 +5,7 @@
   cursor: pointer;
   &:hover {
     transform: translate3d(0, -3px, 0);
-    filter: brightness(1.1);
+    filter: brightness(1.05);
   }
   @include tablet {
     margin-bottom: 68px;
@@ -17,11 +17,49 @@
     overflow: auto;
   }
   &--image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid $border-gray;
     border-radius: 4px 4px 0 0;
     height: 168px;
-    background-color: $gray;
+    > img {
+      width: 100%;
+    }
     @include pc {
       height: 185px;
+    }
+    &.no-thumbnail {
+      box-sizing: border-box;
+      padding: 20px;
+      span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+        color: white;
+        font-size: 42px;
+        font-weight: $fontWeight-black;
+        line-height: 1.3;
+      }
+    }
+    &.theme-color-1 {
+      background-color: $light-green;
+      span {
+        color: $pale-green;
+      }
+    }
+    &.theme-color-2 {
+      background-color: $middle-gray;
+      span {
+        color: $black;
+      }
+    }
+    &.theme-color-3 {
+      background-color: $dark-black;
+      span {
+        color: $light-gray;
+      }
     }
   }
   &--desc {
@@ -69,6 +107,8 @@
       .card-view {
         display: flex;
         align-items: center;
+        margin-top: 0;
+        margin-bottom: 0;
         &-icon {
           width: 13px;
           height: 12px;
@@ -82,6 +122,8 @@
         display: flex;
         align-items: center;
         margin-left: 16px;
+        margin-top: 0;
+        margin-bottom: 0;
         &-icon {
           background-repeat: no-repeat;
           background-size: cover;

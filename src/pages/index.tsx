@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import { parse } from 'query-string';
 import { globalHistory } from '@reach/router';
 
-import Bio from '../components/Bio';
 import Layout from '../components/layout';
 import SEO from '../components/Seo';
 import Category from '../components/common/Category';
@@ -18,13 +17,26 @@ const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.nodes;
   const categories: string[] = ['All', ...data.allMarkdownRemark.group.map((item) => item.fieldValue)];
   const [category, setCategory] = useState<string>((parse(globalHistory.location.search)?.category as string) || 'All');
-  // const markdown = data;
+
+  const getThumbnail = (postIndex) => {
+    const regex = /<img[^>]+src\s*=\s*['"]([^'"]+)['"][^>]*>/g;
+    const htmlString = data.allMarkdownRemark.nodes.map((htmlCode, htmlIndex) => {
+      if (postIndex === htmlIndex) {
+        return htmlCode.html;
+      }
+      return null;
+    });
+    const image = regex.exec(htmlString);
+    if (image && image.length) {
+      return `${image[0].split('srcset')[0]}/>`;
+    }
+    return null;
+  };
 
   if (posts.length === 0) {
     return (
       <Layout location={location}>
         <SEO title="All posts" />
-        <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the directory you specified for the
           gatsby-source-filesystem plugin in gatsby-config.js).
@@ -36,8 +48,6 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location}>
       <SEO title="All posts" />
-      {/* <Bio /> */}
-      {/* 이후에 추가해주세요 ▲ */}
       <div className="main">
         <aside className="aside main-aside">
           <div className="aside-header">
@@ -59,8 +69,8 @@ const BlogIndex = ({ data, location }) => {
             <div className="max-width-1024 card-container">
               {posts
                 .filter((post) => (category === 'All' ? post : category === post.frontmatter.category))
-                .map((post) => (
-                  <Card key={post.fields.slug} post={post} />
+                .map((post, postIndex) => (
+                  <Card key={post.fields.slug} post={post} thumbnail={getThumbnail(postIndex)} />
                 ))}
             </div>
           </div>
