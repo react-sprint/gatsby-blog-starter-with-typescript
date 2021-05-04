@@ -10,8 +10,10 @@ import git from '../images/about/git.svg';
 import twitter from '../images/about/twitter.svg';
 import facebook from '../images/about/facebook.svg';
 import linkdein from '../images/about/linkdein.svg';
+import { COLOR } from '../constants/togglerType';
 
 const About = ({ location }) => {
+  const color = window.localStorage.getItem(COLOR.LOCAL_STORAGE_KEY);
   const data = useStaticQuery(graphql`
     query AboutQuery {
       site {
@@ -41,11 +43,13 @@ const About = ({ location }) => {
     <>
       <Layout location={location}>
         <div className="about-page">
-          <h2 className="about-name">{author.name}</h2>
-          <p className="self-introduction">{author.selfIntroduction}</p>
+          <h2 className={color === 'light' ? 'about-name' : 'about-name-dark'}>{author.name}</h2>
+          <p className={color === 'light' ? 'self-introduction' : 'self-introduction-dark'}>
+            {author.selfIntroduction}
+          </p>
 
           <img className="profile-image" src={profile} alt="profile" />
-          <div className="about-mail">
+          <div className={color === 'light' ? 'about-mail' : 'about-mail-dark'}>
             <img src={tag} alt="tag" className="tag-image" />
             <span>{social.mail}</span>
           </div>
