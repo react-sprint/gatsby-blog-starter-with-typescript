@@ -3,16 +3,18 @@ import '../../styles/components/common/toggler.scss';
 import { Color, COLOR } from '../../constants/togglerType';
 
 const getDefaultColorMode = (): Color => {
-  const defaultColorMode = window.localStorage.getItem(COLOR.LOCAL_STORAGE_KEY);
+  if (typeof window !== 'undefined') {
+    const defaultColorMode = window.localStorage.getItem(COLOR.LOCAL_STORAGE_KEY);
 
-  if (typeof defaultColorMode === 'string') {
-    return defaultColorMode as Color;
+    if (typeof defaultColorMode === 'string') {
+      return defaultColorMode as Color;
+    }
+
+    const defaultMediaQuery = window.matchMedia(COLOR.MEDIA_KEY);
+
+    if (typeof defaultMediaQuery.matches === 'boolean')
+      return defaultMediaQuery.matches ? COLOR.DARK_MODE : COLOR.LIGHT_MODE;
   }
-
-  const defaultMediaQuery = window.matchMedia(COLOR.MEDIA_KEY);
-
-  if (typeof defaultMediaQuery.matches === 'boolean')
-    return defaultMediaQuery.matches ? COLOR.DARK_MODE : COLOR.LIGHT_MODE;
 
   return COLOR.LIGHT_MODE;
 };
@@ -26,7 +28,10 @@ const Toggler = () => {
     document.body.classList.toggle(COLOR.LIGHT_MODE);
     document.body.classList.toggle(COLOR.DARK_MODE);
 
-    window.localStorage.setItem(COLOR.LOCAL_STORAGE_KEY, toggledColor);
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem(COLOR.LOCAL_STORAGE_KEY, toggledColor);
+    }
+
     setColorMode(toggledColor);
   };
 
@@ -37,17 +42,15 @@ const Toggler = () => {
   }, [colorMode]);
 
   return (
-    <label>
-      <div className="toggler">
-        <input
-          type="checkbox"
-          className="toggler-checkbox"
-          onChange={toggleColorHandler}
-          checked={colorMode === COLOR.DARK_MODE}
-        />
-        <span className={`toggler-slider toggler-slider-${colorMode}`} />
-        <span className={`toggler-text toggler-text-${colorMode}`}>{colorMode}</span>
-      </div>
+    <label className="toggler">
+      <input
+        type="checkbox"
+        className="toggler-checkbox"
+        onChange={toggleColorHandler}
+        checked={colorMode === COLOR.DARK_MODE}
+      />
+      <span className={`toggler-slider toggler-slider-${colorMode}`} />
+      <span className={`toggler-text toggler-text-${colorMode}`}>{colorMode}</span>
     </label>
   );
 };
