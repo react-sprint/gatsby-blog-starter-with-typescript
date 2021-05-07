@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/pages/about.scss';
 import { Link } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
@@ -13,7 +13,12 @@ import linkdein from '../images/about/linkdein.svg';
 import { COLOR } from '../constants/togglerType';
 
 const About = ({ location }) => {
-  const color = window.localStorage.getItem(COLOR.LOCAL_STORAGE_KEY);
+  const [color, setColor] = useState<string>('');
+
+  useEffect(() => {
+    setColor(window.localStorage.getItem(COLOR.LOCAL_STORAGE_KEY));
+  }, []);
+
   const data = useStaticQuery(graphql`
     query AboutQuery {
       site {
