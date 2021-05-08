@@ -45,7 +45,7 @@ const About = ({ location }) => {
   const social = data.site.siteMetadata?.social;
 
   return (
-    <>
+    <a>
       <Layout location={location}>
         <div className="about-page">
           <h2 className={color === 'light' ? 'about-name' : 'about-name-dark'}>{author.name}</h2>
@@ -62,35 +62,45 @@ const About = ({ location }) => {
           <div className="about-social">
             {social.git ? (
               <div>
-                <img src={git} alt="git" onClick={() => window.open(`${social.git}`)} />{' '}
+                <a href={social.git} target="_blank">
+                  <img src={git} alt="git" />
+                </a>
               </div>
             ) : (
               <></>
             )}
             {social.instagram ? (
               <div>
-                <img src={instagram} alt="instagram" onClick={() => window.open(`${social.instagram}`)} />
+                <a href={social.instagram} target="_blank">
+                  <img src={instagram} alt="instagram" />
+                </a>
               </div>
             ) : (
               <></>
             )}
             {social.twitter ? (
               <div>
-                <img src={twitter} alt="twitter" onClick={() => window.open(`${social.twitter}`)} />
+                <a href={social.twitter} target="_blank">
+                  <img src={twitter} alt="twitter" />
+                </a>
               </div>
             ) : (
               <></>
             )}
             {social.facebook ? (
               <div>
-                <img src={facebook} alt="facebook" onClick={() => window.open(`${social.facebook}`)} />
+                <a href={social.facebook} target="_blank">
+                  <img src={facebook} alt="facebook" />
+                </a>
               </div>
             ) : (
               <></>
             )}
             {social.linkdein ? (
               <div>
-                <img src={linkdein} alt="linkdein" onClick={() => window.open(`${social.linkdein}`)} />
+                <a href={social.linkdein} target="_blank">
+                  <img src={linkdein} alt="linkdein" />
+                </a>
               </div>
             ) : (
               <></>
@@ -102,7 +112,7 @@ const About = ({ location }) => {
           </Link>
         </div>
       </Layout>
-    </>
+    </a>
   );
 };
 
