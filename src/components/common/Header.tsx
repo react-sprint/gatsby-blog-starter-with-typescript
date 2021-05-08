@@ -36,14 +36,9 @@ function Header({ headerTitle }: HeaderProps) {
             <h3>ABOUT</h3>
           </Link>
           {gitUrl.git ? (
-            <Button
-              text="GITHUB"
-              color={BUTTON_COLOR.GREEN}
-              icon={Git}
-              handleClick={() => {
-                window.open(`${gitUrl.git}`);
-              }}
-            />
+            <a href={gitUrl.git} target="_blank">
+              <Button text="GITHUB" color={BUTTON_COLOR.GREEN} icon={Git} />
+            </a>
           ) : (
             <> </>
           )}
