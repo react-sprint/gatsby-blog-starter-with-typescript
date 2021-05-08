@@ -27,6 +27,7 @@ function Header({ headerTitle }: HeaderProps) {
             color={BUTTON_COLOR.GREEN}
             icon={Git}
             handleClick={() => {
+              if (typeof window === 'undefined') return;
               window.open(`${githubURl}`);
             }}
           />
