@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../../styles/components/common/toggler.scss';
 import { Color, COLOR } from '../../constants/togglerType';
 
-const getDefaultColorMode = (): Color => {
+export const getDefaultColorMode = (): Color => {
   if (typeof window !== 'undefined') {
     const defaultColorMode = window.localStorage.getItem(COLOR.LOCAL_STORAGE_KEY);
 
