@@ -8,11 +8,12 @@
     }
     .contents {
       width: 220px;
-      height: 56px;
       margin: 0;
       overflow: hidden;
       text-overflow: ellipsis;
-      white-space: normal;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
       text-align: left;
       @include pc {
         height: 74px;
@@ -25,6 +26,8 @@
       height: 80px;
       display: flex;
       align-items: center;
+      border: 1px solid $border-gray;
+      border-radius: 2px;
 
       img {
         width: 80px;
