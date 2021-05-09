@@ -36,9 +36,9 @@ function Header({ headerTitle }: HeaderProps) {
             <h3>ABOUT</h3>
           </Link>
           {gitUrl.git ? (
-            <Link to={gitUrl.git} target="_blank">
+            <a href={`${gitUrl.git}`} target="_blank" rel="noopener norefferer">
               <Button text="GITHUB" color={BUTTON_COLOR.GREEN} icon={Git} />
-            </Link>
+            </a>
           ) : (
             <> </>
           )}
