@@ -21,14 +21,20 @@ const Layout = ({ location, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath = location.pathname === rootPath;
 
+  const reloadClick = () => window.location.reload();
+
   if (isRootPath) {
     headerTitle = (
-      <div className="logo" onClick={() => window.location.reload()}>
+      <div className="logo" onClick={reloadClick}>
         {title}
       </div>
     );
   } else {
-    headerTitle = <Link to="/">{title}</Link>;
+    headerTitle = (
+      <Link to="/" rel="noreferrer">
+        {title}
+      </Link>
+    );
   }
 
   return (
