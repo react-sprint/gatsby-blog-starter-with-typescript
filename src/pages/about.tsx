@@ -43,6 +43,17 @@ const About = ({ location }) => {
   const author = data.site.siteMetadata?.author;
   const social = data.site.siteMetadata?.social;
 
+  const SnsLink = ({ url, img }) =>
+    url ? (
+      <div>
+        <a href={social[url]} target="_blank" rel="noreferrer">
+          <img src={img} alt={url} />
+        </a>
+      </div>
+    ) : (
+      <></>
+    );
+
   return (
     <Layout location={location}>
       <div className="about-page">
@@ -56,51 +67,11 @@ const About = ({ location }) => {
         </div>
 
         <div className="about-social">
-          {social.git ? (
-            <div>
-              <a href={social.git} target="_blank" rel="noreferrer">
-                <img src={git} alt="git" />
-              </a>
-            </div>
-          ) : (
-            <></>
-          )}
-          {social.instagram ? (
-            <div>
-              <a href={social.instagram} target="_blank" rel="noreferrer">
-                <img src={instagram} alt="instagram" />
-              </a>
-            </div>
-          ) : (
-            <></>
-          )}
-          {social.twitter ? (
-            <div>
-              <a href={social.twitter} target="_blank" rel="noreferrer">
-                <img src={twitter} alt="twitter" />
-              </a>
-            </div>
-          ) : (
-            <></>
-          )}
-          {social.facebook ? (
-            <div>
-              <a href={social.facebook} target="_blank" rel="noreferrer">
-                <img src={facebook} alt="facebook" />
-              </a>
-            </div>
-          ) : (
-            <></>
-          )}
-          {social.linkdein ? (
-            <div>
-              <a href={social.linkdein} target="_blank" rel="noreferrer">
-                <img src={linkdein} alt="linkdein" />
-              </a>
-            </div>
-          ) : (
-            <></>
-          )}
+          <SnsLink url={'git'} img={git} />
+          <SnsLink url={'instagram'} img={instagram} />
+          <SnsLink url={'twitter'} img={twitter} />
+          <SnsLink url={'facebook'} img={facebook} />
+          <SnsLink url={'linkdein'} img={linkdein} />
         </div>
       </div>
     </Layout>
