@@ -29,7 +29,7 @@ const VALIDATION = {
 };
 
 const VALIDATION_ERROR_MESSAGE = {
-  SINGLE_QUATE: 'Signle quotes are not allowed',
+  SINGLE_QUATE: 'Single quotes are not allowed',
   DUPLICATE: 'Duplicate exists',
   TITLE_LENGTH: `Title length should be between ${VALIDATION.TITLE.MIN_LENGTH} ~ ${VALIDATION.TITLE.MAX_LENGTH} letters`,
   DESCRIPTION_LENGTH: `Description length should be between ${VALIDATION.DESCRIPTION.MIN_LENGTH} ~ ${VALIDATION.DESCRIPTION.MAX_LENGTH} letters`,
@@ -54,13 +54,13 @@ const getCategoryOptions = async () => {
 const getCategory = async () => {
   let selectedCategory = null;
   const categoryOptions = await getCategoryOptions();
-  const newCategoryOption = 'Create New Category';
+  const newCategoryOption = 'Create new category';
 
   const { selectedOption } = await inquirer.prompt([
     {
       name: 'selectedOption',
       type: 'list',
-      message: 'Please Select a Category or Create New',
+      message: 'Please select or create a category',
       choices: [...categoryOptions, new inquirer.Separator(), newCategoryOption],
     },
   ]);
@@ -135,9 +135,9 @@ const formatContents = (contents) => matter.stringify('', contents).split("'").j
 
 (async () => {
   const date = dateFns.format(new Date(), DATE_FORMAT);
-  log.info('✏️  Blog-starter post generator');
+  log.info('✏️  Gatsby blog starter post generator');
   log.info('📅 Date : ', date);
-  log.start('🚀 Start Creating New Post\n');
+  log.start('🚀 Start creating new post\n');
   const { category } = await getCategory();
 
   const targetDir = `${CONTENTS_PATH}/${category}`;
