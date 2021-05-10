@@ -54,14 +54,16 @@ const About = ({ location }) => {
       <></>
     );
 
+  const theme = (name: string) => (color === 'light' ? `${name}` : `${name}-dark`);
+
   return (
     <Layout location={location}>
       <div className="about-page">
-        <h2 className={color === 'light' ? 'about-name' : 'about-name-dark'}>{author.name}</h2>
-        <p className={color === 'light' ? 'self-introduction' : 'self-introduction-dark'}>{author.selfIntroduction}</p>
-
+        <h2 className={theme('about-name')}>{author.name}</h2>
+        <p className={theme('self-introduction')}>{author.selfIntroduction}</p>
         <img className="profile-image" src={profile} alt="profile" />
-        <div className={color === 'light' ? 'about-mail' : 'about-mail-dark'}>
+
+        <div className={theme('about-mail')}>
           <img src={tag} alt="tag" className="tag-image" />
           <span>{social.mail}</span>
         </div>
