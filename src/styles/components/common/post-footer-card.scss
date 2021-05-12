@@ -1,0 +1,70 @@
+.post-footer-card {
+  .card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .title {
+      margin: 0 0 11px 0;
+    }
+    .contents {
+      width: 220px;
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      text-align: left;
+      @include pc {
+        height: 74px;
+        width: 500px;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      border: 1px solid $border-gray;
+      border-radius: 2px;
+
+      width: 120px;
+      height: 120px;
+      img {
+        width: 100%;
+      }
+      &.no-thumbnail {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          text-align: center;
+          color: white;
+          font-size: 14px;
+          font-weight: $fontWeight-black;
+          line-height: 1.3;
+        }
+      }
+      &.theme-color-1 {
+        background-color: $light-green;
+        span {
+          color: $pale-green;
+        }
+      }
+      &.theme-color-2 {
+        background-color: $middle-gray;
+        span {
+          color: $black;
+        }
+      }
+      &.theme-color-3 {
+        background-color: $dark-black;
+        span {
+          color: $light-gray;
+        }
+      }
+    }
+  }
+}

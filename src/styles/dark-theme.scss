@@ -40,4 +40,22 @@ body.dark {
       }
     }
   }
+
+  .blog-post,
+  .blog-post-nav {
+    h1,
+    p {
+      color: $white;
+    }
+    blockquote {
+      > p {
+        color: $black;
+      }
+    }
+    &.blog-post-nav {
+      h2 {
+        color: $white;
+      }
+    }
+  }
 }

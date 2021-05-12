@@ -9,13 +9,17 @@ module.exports = {
     description: `blog starter`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
-      // twitter: `kylemathews`,
       git: `https://github.com`,
       instagram: `https://www.instagram.com`,
       twitter: `https://twitter.com/?lang=ko`,
       linkdein: `https://kr.linkedin.com`,
       facebook: `https://facebook.com`,
       mail: `admin@gmail.com`,
+    },
+    commentInfo: {
+      service: 'utterances', // select utterances or disqus
+      disqusId: 'our-blog-starter', // your disqus shortname, check detail: disqus.com
+      utterancesId: 'react-sprint/blog-starter', // your gatsby repository, check detail: utteranc.es
     },
   },
   plugins: [

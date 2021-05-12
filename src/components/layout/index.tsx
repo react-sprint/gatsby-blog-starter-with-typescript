@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { Link } from '@reach/router';
-import { useStaticQuery, graphql } from 'gatsby';
+import React, { useEffect } from 'react';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import Header from '../common/Header';
+import { getDefaultColorMode } from '../common/Toggler';
 import './index.scss';
 
 const Layout = ({ location, children }) => {
@@ -36,6 +36,11 @@ const Layout = ({ location, children }) => {
       </Link>
     );
   }
+
+  useEffect(() => {
+    const defaultColorMode = getDefaultColorMode();
+    document.body.classList.add(defaultColorMode);
+  }, []);
 
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
