@@ -18,9 +18,11 @@ const BlogPostTemplate = ({ data, location }) => {
 
   const { previous, next } = data;
 
+  const filteredPost = posts.filter((item) => category === item.frontmatter.category);
+
   const getThumbnail = (postIndex) => {
     const regex = /<img[^>]+src\s*=\s*['"]([^'"]+)['"][^>]*>/g;
-    const htmlString = data.allMarkdownRemark.nodes.map((htmlCode, htmlIndex) => {
+    const htmlString = filteredPost.map((htmlCode, htmlIndex) => {
       if (postIndex === htmlIndex) {
         return htmlCode.html;
       }
@@ -67,11 +69,9 @@ const BlogPostTemplate = ({ data, location }) => {
           <span>HOME</span> <img src={arrowIcon} /> <span>{data.markdownRemark.frontmatter.category}</span>
         </p>
         <div className="post-card-container">
-          {posts
-            .filter((item) => category === item.frontmatter.category)
-            .map((item, postIndex) => (
-              <PostFooterCard key={item.fields.slug} post={item} thumbnail={getThumbnail(postIndex)} />
-            ))}
+          {filteredPost.map((item, postIndex) => (
+            <PostFooterCard key={item.fields.slug} post={item} thumbnail={getThumbnail(postIndex)} />
+          ))}
         </div>
       </nav>
     </Layout>
