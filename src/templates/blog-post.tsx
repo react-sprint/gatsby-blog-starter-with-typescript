@@ -9,16 +9,37 @@ import nextIcon from '../images/post-next-icon.svg';
 import '../styles/blog-post.scss';
 import '../styles/code.scss';
 import PostFooterCard from '../components/common/PostFooterCard';
+import Comment from '../components/comment';
+
+export interface CommentProps {
+  service: 'disqus' | 'utterances';
+  disqusProps: {
+    shortname: string;
+    config: { identifier: string; title: string };
+  };
+  utterancesProps: string;
+}
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark;
   const posts = data.allMarkdownRemark.nodes;
+  const slug = data.markdownRemark.fields?.slug;
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const { category } = data.markdownRemark.frontmatter;
+  const { commentInfo } = data.site.siteMetadata;
 
   const { previous, next } = data;
 
   const filteredPost = posts.filter((item) => category === item.frontmatter.category);
+
+  const commentProps: CommentProps = {
+    service: commentInfo.service,
+    disqusProps: {
+      shortname: commentInfo.disqusId,
+      config: { identifier: slug, title: post.frontmatter.title },
+    },
+    utterancesProps: commentInfo.utterancesId,
+  };
 
   const getThumbnail = (postIndex) => {
     const regex = /<img[^>]+src\s*=\s*['"]([^'"]+)['"][^>]*>/g;
@@ -74,6 +95,11 @@ const BlogPostTemplate = ({ data, location }) => {
           ))}
         </div>
       </nav>
+      <Comment
+        service={commentProps.service}
+        disqusProps={commentProps.disqusProps}
+        utterancesProps={commentProps.utterancesProps}
+      />
     </Layout>
   );
 };
@@ -85,6 +111,11 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        commentInfo {
+          service
+          disqusId
+          utterancesId
+        }
       }
     }
     markdownRemark(id: { eq: $id }) {
@@ -96,6 +127,9 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         category
+      }
+      fields {
+        slug
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
