@@ -10,6 +10,11 @@ module.exports = {
     social: {
       // twitter: `kylemathews`,
     },
+    commentInfo: {
+      service: 'utterances', // select utterances or disqus
+      disqusId: 'our-blog-starter', // your disqus shortname, check detail: disqus.com
+      utterancesId: 'react-sprint/blog-starter', // your gatsby repository, check detail: utteranc.es
+    },
   },
   plugins: [
     {

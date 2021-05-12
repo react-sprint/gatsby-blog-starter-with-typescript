@@ -7,11 +7,32 @@ import arrowIcon from '../images/arrow.svg';
 import SEO from '../components/Seo';
 import '../styles/blog-post.scss';
 import '../styles/code.scss';
+import Comment from '../components/comment';
+
+export interface CommentProps {
+  service: 'disqus' | 'utterances';
+  disqusProps: {
+    shortname: string;
+    config: { identifier: string; title: string };
+  };
+  utterancesProps: string;
+}
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata?.title || `Title`;
+  const slug = data.markdownRemark.fields?.slug;
+  const { commentInfo } = data.site.siteMetadata;
   const { previous, next } = data;
+
+  const commentProps: CommentProps = {
+    service: commentInfo.service,
+    disqusProps: {
+      shortname: commentInfo.disqusId,
+      config: { identifier: slug, title: post.frontmatter.title },
+    },
+    utterancesProps: commentInfo.utterancesId,
+  };
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -56,6 +77,11 @@ const BlogPostTemplate = ({ data, location }) => {
           </li>
         </ul>
       </nav>
+      <Comment
+        service={commentProps.service}
+        disqusProps={commentProps.disqusProps}
+        utterancesProps={commentProps.utterancesProps}
+      />
     </Layout>
   );
 };
@@ -67,6 +93,11 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        commentInfo {
+          service
+          disqusId
+          utterancesId
+        }
       }
     }
     markdownRemark(id: { eq: $id }) {
@@ -77,6 +108,9 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+      }
+      fields {
+        slug
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
