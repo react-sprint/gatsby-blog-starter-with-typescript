@@ -180,3 +180,46 @@
     border-bottom: 1px solid $color-accent;
   }
 }
+
+.blog-post-nav {
+  margin-top: 120px;
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-bottom: 55px;
+    li {
+      background: #e7f2ec;
+      border-radius: 30px;
+      color: $theme-green;
+      a {
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        img {
+          &.left {
+            padding-right: 10px;
+          }
+          &.right {
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+  }
+  .category {
+    padding: 0;
+    margin-bottom: 38px;
+    color: $middle-gray;
+    cursor: default;
+    span,
+    img {
+      padding-right: 8px;
+    }
+  }
+  .card-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
