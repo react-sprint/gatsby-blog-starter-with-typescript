@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'gatsby';
 import Header from '../common/Header';
-
+import { getDefaultColorMode } from '../common/Toggler';
 import './index.scss';
 
 const Layout = ({ location, children }) => {
@@ -14,6 +14,11 @@ const Layout = ({ location, children }) => {
   } else {
     headerTitle = <Link to="/">LOGO</Link>;
   }
+
+  useEffect(() => {
+    const defaultColorMode = getDefaultColorMode();
+    document.body.classList.add(defaultColorMode);
+  }, []);
 
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
