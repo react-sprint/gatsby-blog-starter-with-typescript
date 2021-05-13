@@ -33,7 +33,6 @@
 
 .about-name-dark {
   @extend .about-name;
-  color: $white;
 }
 
 .self-introduction {
@@ -61,7 +60,6 @@
 
 .self-introduction-dark {
   @extend .self-introduction;
-  color: $white;
 }
 
 .profile-image {
@@ -103,7 +101,6 @@
 
 .about-mail-dark {
   @extend .about-mail;
-  color: $white;
 }
 
 .about-social {
