@@ -50,12 +50,12 @@ const BlogIndex = ({ data, location }) => {
       <SEO title="All posts" />
       <div className="main">
         <aside className="aside main-aside">
+          <Toggler />
           <div className="aside-header">
             <div className="aside-tag-container">
               <img src={tagIcon} alt="tag" className="aside-tag-img" />
               <h2 className="aside-tag-title">TAG</h2>
             </div>
-            <Toggler />
           </div>
 
           <Category categories={categories} category={category} setCategory={setCategory} />

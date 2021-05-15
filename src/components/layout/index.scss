@@ -36,6 +36,10 @@ body {
   font-size: $fontSize-1;
 }
 
+.logo {
+  cursor: pointer;
+}
+
 @media (max-width: 42rem) {
   blockquote {
     padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-4);

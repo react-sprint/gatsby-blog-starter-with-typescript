@@ -1,0 +1,146 @@
+.about-page {
+  @extend .display_layout;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  @include pc {
+    width: 300px;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.about-name {
+  @extend .display_layout;
+  font-size: 45px;
+  font-weight: $fontWeight-black;
+  line-height: 165%;
+  text-align: center;
+  word-break: break-all;
+  margin: 0px;
+
+  @include mobile {
+    padding-top: 55px;
+  }
+}
+
+.about-name-light {
+  @extend .about-name;
+  color: $black;
+}
+
+.about-name-dark {
+  @extend .about-name;
+}
+
+.self-introduction {
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: -0.02em;
+  height: 42px;
+  margin-top: 16px;
+  text-align: center;
+
+  @include pc {
+    width: 300px;
+    max-width: 364px;
+  }
+
+  @include mobile {
+    max-width: 270px;
+  }
+}
+
+.self-introduction-light {
+  @extend .self-introduction;
+  color: #585858;
+}
+
+.self-introduction-dark {
+  @extend .self-introduction;
+}
+
+.profile-image {
+  margin-top: 28px;
+
+  @include pc {
+    width: 216px;
+    height: 216px;
+  }
+
+  @include mobile {
+    width: 162px;
+    height: 162px;
+  }
+}
+
+.about-mail {
+  @extend .display_layout;
+  width: 300px;
+  height: 40px;
+  font-size: 15px;
+  margin-top: 45px;
+  line-height: 21.45px;
+
+  .tag-image {
+    margin-right: 10px;
+  }
+
+  span {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+}
+
+.about-mail-light {
+  @extend .about-mail;
+  color: #585858;
+}
+
+.about-mail-dark {
+  @extend .about-mail;
+}
+
+.about-social {
+  display: flex;
+  justify-content: space-around;
+  width: 200px;
+  height: 28px;
+  margin-top: 36px;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    background-color: $theme-green;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+}
+
+.posts-box {
+  @extend .display_layout;
+  width: 274px;
+  height: 54px;
+  background-color: $theme-green;
+  border-radius: 30px;
+  margin-top: 50px;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: $theme-green;
+    transition: 0.2s;
+    transform: translate3d(0, -3px, 0);
+    box-shadow: 0px 4px 10px rgba(85, 175, 122, 0.4);
+  }
+}
+
+.display_layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

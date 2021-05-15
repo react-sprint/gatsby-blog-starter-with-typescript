@@ -24,7 +24,6 @@ const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark;
   const posts = data.allMarkdownRemark.nodes;
   const slug = data.markdownRemark.fields?.slug;
-  const siteTitle = data.site.siteMetadata?.title || `Title`;
   const { category } = data.markdownRemark.frontmatter;
   const { commentInfo } = data.site.siteMetadata;
 
@@ -57,12 +56,12 @@ const BlogPostTemplate = ({ data, location }) => {
   };
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
       <article className="blog-post" itemScope itemType="http://schema.org/Article">
         <header>
           <p className="category">
-            <span>HOME</span> <img src={arrowIcon} /> <span>{category}</span>
+            <span>HOME</span> <img src={arrowIcon} alt="HOME" /> <span>{category}</span>
           </p>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>SubTitle {post.frontmatter.date}</p>
@@ -74,20 +73,20 @@ const BlogPostTemplate = ({ data, location }) => {
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
-                <img src={prevIcon} className="left" /> PREV
+                <img src={prevIcon} alt="left" className="left" /> PREV
               </Link>
             )}
           </li>
           <li>
             {next && (
               <Link to={next.fields.slug} rel="next">
-                RIGHT <img src={nextIcon} className="right" />
+                RIGHT <img src={nextIcon} alt="right" className="right" />
               </Link>
             )}
           </li>
         </ul>
         <p className="category">
-          <span>HOME</span> <img src={arrowIcon} /> <span>{data.markdownRemark.frontmatter.category}</span>
+          <span>HOME</span> <img src={arrowIcon} alt="HOME" /> <span>{data.markdownRemark.frontmatter.category}</span>
         </p>
         <div className="post-card-container">
           {filteredPost.map((item, postIndex) => (

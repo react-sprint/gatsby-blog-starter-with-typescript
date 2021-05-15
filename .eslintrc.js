@@ -34,6 +34,7 @@ module.exports = {
     'react/button-has-type': 'off',
     'react/jsx-filename-extension': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'react/jsx-curly-brace-presence': 'off',
     'react/prop-types': 'off',
     'object-curly-newline': 'off',
     'react/destructuring-assignment': 'off',
