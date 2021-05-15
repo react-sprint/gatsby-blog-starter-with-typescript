@@ -22,7 +22,7 @@ function Header({ headerTitle }: HeaderProps) {
     }
   `);
 
-  const gitUrl = data.site.siteMetadata?.social;
+  const gitUrl = data.site.siteMetadata.social?.git;
 
   return (
     <header className="header-area">
@@ -41,7 +41,7 @@ function Header({ headerTitle }: HeaderProps) {
             icon={Git}
             handleClick={() => {
               if (typeof window === 'undefined') return;
-              window.open(`${gitUrl.git}`);
+              window.open(`${gitUrl}`);
             }}
           />
         </div>
