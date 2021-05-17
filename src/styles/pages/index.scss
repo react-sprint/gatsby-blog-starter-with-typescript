@@ -44,6 +44,10 @@
   &::-webkit-scrollbar {
     display: none;
   }
+  .aside-header,
+  .contacts {
+    display: none;
+  }
   @include pc {
     position: sticky;
     top: 0;
@@ -52,6 +56,10 @@
     margin: 0;
     white-space: normal;
     overflow-x: initial;
+    .aside-header,
+    .contacts {
+      display: flex;
+    }
   }
 }
 
