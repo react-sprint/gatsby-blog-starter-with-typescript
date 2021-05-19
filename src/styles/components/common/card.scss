@@ -69,13 +69,6 @@
     }
     &__top {
       color: $dark-black;
-      .date {
-        @include point-font();
-        border-bottom: 1px solid $border-gray;
-        padding-bottom: 10px;
-        color: #b8b8b8;
-        font-size: 13px;
-      }
       .title {
         line-height: 150%;
         margin: 16px 0;
@@ -83,9 +76,10 @@
         font-size: 18px;
       }
       .contents {
-        margin-bottom: 12px;
         font-size: 15px;
         line-height: 150%;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $border-gray;
         /* --- css for "..." */
         overflow: hidden;
         text-overflow: ellipsis;
@@ -102,9 +96,10 @@
     &__bottom {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       margin: 10px 0 20px;
       color: $light-gray;
-      .card-view {
+      .card-category {
         display: flex;
         align-items: center;
         margin-top: 0;
@@ -115,10 +110,12 @@
         }
         &-text {
           @include point-font();
+          color: #b8b8b8;
+          font-size: 13px;
           margin-left: 6px;
         }
       }
-      .card-liked {
+      .card-date {
         display: flex;
         align-items: center;
         margin-left: 16px;
@@ -132,6 +129,8 @@
         }
         &-text {
           @include point-font();
+          color: #b8b8b8;
+          font-size: 13px;
           margin-left: 6px;
         }
       }
