@@ -110,7 +110,7 @@
         }
         &-text {
           @include point-font();
-          color: #b8b8b8;
+          color: $light-gray;
           font-size: 13px;
           margin-left: 6px;
         }
@@ -129,7 +129,7 @@
         }
         &-text {
           @include point-font();
-          color: #b8b8b8;
+          color: $light-gray;
           font-size: 13px;
           margin-left: 6px;
         }
