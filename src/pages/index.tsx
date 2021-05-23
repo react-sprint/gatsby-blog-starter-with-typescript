@@ -6,8 +6,8 @@ import { globalHistory } from '@reach/router';
 import Layout from '../components/layout';
 import SEO from '../components/Seo';
 import Category from '../components/common/Category';
+import Contacts from '../components/common/Contacts';
 import Card from '../components/common/Card';
-import Toggler from '../components/common/Toggler';
 import titleIcon from '../images/title-icon.svg';
 import tagIcon from '../images/tag-icon.svg';
 
@@ -50,7 +50,6 @@ const BlogIndex = ({ data, location }) => {
       <SEO title="All posts" />
       <div className="main">
         <aside className="aside main-aside">
-          <Toggler />
           <div className="aside-header">
             <div className="aside-tag-container">
               <img src={tagIcon} alt="tag" className="aside-tag-img" />
@@ -59,6 +58,7 @@ const BlogIndex = ({ data, location }) => {
           </div>
 
           <Category categories={categories} category={category} setCategory={setCategory} />
+          <Contacts />
         </aside>
         <div className="index">
           <h2 className="index-title">

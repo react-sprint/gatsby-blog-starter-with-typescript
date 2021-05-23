@@ -55,7 +55,7 @@
 
 .self-introduction-light {
   @extend .self-introduction;
-  color: #585858;
+  color: $gray;
 }
 
 .self-introduction-dark {
@@ -73,52 +73,6 @@
   @include mobile {
     width: 162px;
     height: 162px;
-  }
-}
-
-.about-mail {
-  @extend .display_layout;
-  width: 300px;
-  height: 40px;
-  font-size: 15px;
-  margin-top: 45px;
-  line-height: 21.45px;
-
-  .tag-image {
-    margin-right: 10px;
-  }
-
-  span {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-}
-
-.about-mail-light {
-  @extend .about-mail;
-  color: #585858;
-}
-
-.about-mail-dark {
-  @extend .about-mail;
-}
-
-.about-social {
-  display: flex;
-  justify-content: space-around;
-  width: 200px;
-  height: 28px;
-  margin-top: 36px;
-
-  div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 28px;
-    height: 28px;
-    background-color: $theme-green;
-    border-radius: 50%;
-    box-sizing: border-box;
   }
 }
 
