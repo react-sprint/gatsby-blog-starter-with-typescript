@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-blog-with-typescript",
+  "name": "gatsby-blog-stater-with-typescript",
   "description": "Gatsby Blog Starter with Typescript",
   "version": "0.1.1",
   "contributors": [
@@ -11,7 +11,7 @@
     "sungyun6789 <sungyun5423@gmail.com> (https://github.com/sungyun6789)"
   ],
   "bugs": {
-    "url": "https://github.com/react-sprint/gatsby-blog-with-typescript/issues"
+    "url": "https://github.com/react-sprint/gatsby-blog-stater-with-typescript/issues"
   },
   "dependencies": {
     "@reach/router": "^1.3.4",
@@ -73,7 +73,7 @@
     "lint-staged": "^10.5.4",
     "prettier": "2.2.1"
   },
-  "homepage": "https://github.com/react-sprint/gatsby-blog-with-typescript#readme",
+  "homepage": "https://github.com/react-sprint/gatsby-blog-stater-with-typescript#readme",
   "keywords": [
     "gatsby"
   ],
@@ -81,7 +81,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/react-sprint/gatsby-blog-with-typescript.git"
+    "url": "git+https://github.com/react-sprint/gatsby-blog-stater-with-typescript.git"
   },
   "husky": {
     "hooks": {
