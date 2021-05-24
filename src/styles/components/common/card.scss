@@ -63,11 +63,8 @@
     }
   }
   &--desc {
-    padding: 20px 16px 0;
-    @include pc {
-      padding: 0px;
-    }
     &__top {
+      border-bottom: 1px solid $border-gray;
       color: $dark-black;
       .title {
         line-height: 150%;
@@ -76,20 +73,18 @@
         font-size: 18px;
       }
       .contents {
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        height: 5.5rem;
         font-size: 15px;
         line-height: 150%;
-        padding-bottom: 20px;
-        border-bottom: 1px solid $border-gray;
         /* --- css for "..." */
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: normal;
-        height: 5.8em;
         text-align: left;
         word-wrap: break-word;
-        display: -webkit-box;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
         /* css for "..." --- */
       }
     }

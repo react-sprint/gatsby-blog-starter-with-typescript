@@ -60,11 +60,13 @@ const BlogPostTemplate = ({ data, location }) => {
       <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
       <article className="blog-post" itemScope itemType="http://schema.org/Article">
         <header>
-          <p className="category">
-            <span>HOME</span> <img src={arrowIcon} alt="HOME" /> <span>{category}</span>
+          <p className="post-category">
+            <Link to={`/`}>HOME</Link>
+            <img src={arrowIcon} alt="HOME" />
+            <Link to={`/?category=${category}`}>{category}</Link>
           </p>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>SubTitle {post.frontmatter.date}</p>
+          <p>{post.frontmatter.date}</p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
       </article>
@@ -85,8 +87,10 @@ const BlogPostTemplate = ({ data, location }) => {
             )}
           </li>
         </ul>
-        <p className="category">
-          <span>HOME</span> <img src={arrowIcon} alt="HOME" /> <span>{data.markdownRemark.frontmatter.category}</span>
+        <p className="post-category">
+          <Link to={`/`}>HOME</Link>
+          <img src={arrowIcon} alt="HOME" />
+          <Link to={`/?category=${category}`}>{category}</Link>
         </p>
         <div className="post-card-container">
           {filteredPost.map((item, postIndex) => (

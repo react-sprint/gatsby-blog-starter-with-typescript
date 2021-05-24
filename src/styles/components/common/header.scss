@@ -24,13 +24,13 @@
     }
 
     .header-title {
+      @include point-font();
       color: $theme-green;
-      font-size: 24px;
-      font-weight: 900;
+      font-size: 1rem;
+      font-weight: 800;
       cursor: default;
-
       @include pc {
-        font-size: 28px;
+        font-size: 1.2rem;
       }
     }
 
@@ -38,8 +38,9 @@
       display: flex;
       align-items: center;
 
-      :not(:first-child) {
-        margin-left: 32px;
+      > a,
+      button {
+        margin-left: 16px;
       }
 
       h3 {
@@ -51,7 +52,28 @@
         display: none;
       }
 
+      .active {
+        color: $theme-green;
+        position: relative;
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%, 0);
+          width: 5px;
+          height: 5px;
+          background-color: $theme-green;
+          border-radius: 50%;
+        }
+      }
+
       @include pc {
+        > a,
+        button {
+          margin-left: 32px;
+        }
+
         h3 {
           font-size: 16px;
         }

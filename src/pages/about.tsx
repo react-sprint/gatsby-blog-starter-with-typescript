@@ -7,12 +7,6 @@ import profile from '../images/about/profile.svg';
 import { COLOR } from '../constants/togglerType';
 
 const About = ({ location }) => {
-  const [color, setColor] = useState<string>('');
-
-  useEffect(() => {
-    setColor(window.localStorage.getItem(COLOR.LOCAL_STORAGE_KEY));
-  }, []);
-
   const data = useStaticQuery(graphql`
     query AboutQuery {
       site {
@@ -26,8 +20,13 @@ const About = ({ location }) => {
       }
     }
   `);
-
+  const [color, setColor] = useState<string>('');
   const author = data.site.siteMetadata?.author;
+  const instruction = author.selfIntroduction.replace(/\n/g, '<br/>');
+
+  useEffect(() => {
+    setColor(window.localStorage.getItem(COLOR.LOCAL_STORAGE_KEY));
+  }, []);
 
   const theme = (name: string) => (color === 'light' ? `${name}` : `${name}-dark`);
 
@@ -35,7 +34,7 @@ const About = ({ location }) => {
     <Layout location={location}>
       <div className="about-page">
         <h2 className={theme('about-name')}>{author.name}</h2>
-        <p className={theme('self-introduction')}>{author.selfIntroduction}</p>
+        <p className={theme('self-introduction')} dangerouslySetInnerHTML={{ __html: instruction }} />
         <img className="profile-image" src={profile} alt="profile" />
         <Contacts />
       </div>

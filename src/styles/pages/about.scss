@@ -2,9 +2,9 @@
   @extend .display_layout;
   flex-wrap: wrap;
   flex-direction: column;
-
+  padding-bottom: 76px;
   @include pc {
-    width: 300px;
+    width: 572px;
   }
 
   @include mobile {
@@ -36,21 +36,10 @@
 }
 
 .self-introduction {
-  font-size: 14px;
-  line-height: 130%;
-  letter-spacing: -0.02em;
-  height: 42px;
+  letter-spacing: -0.025em;
   margin-top: 16px;
+  color: $gray;
   text-align: center;
-
-  @include pc {
-    width: 300px;
-    max-width: 364px;
-  }
-
-  @include mobile {
-    max-width: 270px;
-  }
 }
 
 .self-introduction-light {

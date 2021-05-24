@@ -6,13 +6,12 @@
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: center;
   }
   &--item {
     display: inline-block;
     margin-right: 12px;
-    margin-bottom: 12px;
-    padding: 5px 13px;
+    padding: 3px 13px;
     border: 0;
     border-radius: 30px;
     outline: 0;
@@ -20,13 +19,19 @@
     color: $theme-green;
     transition: 0.2s;
     font-weight: 500;
+    font-size: 14px;
+    &:hover {
+      transform: translate3d(0, -1px, 0);
+      background-color: $border-gray;
+      color: $theme-green;
+    }
     &.active {
       background-color: $theme-green;
       color: $pale-green;
-    }
-    &:hover {
-      transform: translate3d(0, -1px, 0);
-      filter: brightness(1.1);
+      &:hover {
+        background-color: $theme-green;
+        color: $pale-green;
+      }
     }
     &:last-child {
       margin-right: 25px;
@@ -34,6 +39,8 @@
     @include pc {
       display: block;
       border-radius: 4px;
+      font-size: 1rem;
+      margin-bottom: 12px;
     }
   }
 }

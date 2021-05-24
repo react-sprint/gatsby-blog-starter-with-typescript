@@ -1,17 +1,25 @@
 .toggler {
   position: relative;
   float: right;
-  width: 52px;
+  width: 22px;
   height: 22px;
   box-sizing: border-box;
   border-radius: 22px;
   border: 1px solid;
   cursor: pointer;
+  @include pc {
+    width: 52px;
+    margin-right: 34px;
+  }
 
   &-text {
     @include point-font;
     font-size: 11px;
     font-weight: 500;
+    display: none;
+    @include pc {
+      display: block;
+    }
   }
 
   &-text-light {
@@ -66,10 +74,11 @@
     transition: 0.4s;
     -webkit-transition: 0.4s;
   }
-
-  input:checked + &-slider:before {
-    -webkit-transform: translateX(30px);
-    -ms-transform: translateX(30px);
-    transform: translateX(30px);
+  @include pc {
+    input:checked + &-slider:before {
+      -webkit-transform: translateX(30px);
+      -ms-transform: translateX(30px);
+      transform: translateX(30px);
+    }
   }
 }
