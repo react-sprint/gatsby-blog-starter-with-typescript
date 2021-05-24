@@ -1,14 +1,27 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `GATSBY BLOG`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `jeongyun.lee`,
+      summary: `FE Engineer`,
+      selfIntroduction: `Hello, this is a place where you can introduce yourself. 
+      If you modify Gatsby-config,
+      you can customize it freely! Thank you.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `blog starter`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
-      twitter: `kylemathews`,
+      git: `https://github.com`,
+      instagram: `https://www.instagram.com`,
+      twitter: `https://twitter.com/?lang=ko`,
+      linkdein: `https://kr.linkedin.com`,
+      facebook: `https://facebook.com`,
+      mail: `admin@gmail.com`,
+    },
+    commentInfo: {
+      service: 'utterances', // select utterances or disqus
+      disqusId: 'our-blog-starter', // your disqus shortname, check detail: disqus.com
+      utterancesId: 'react-sprint/blog-starter', // your gatsby repository, check detail: utteranc.es
     },
   },
   plugins: [

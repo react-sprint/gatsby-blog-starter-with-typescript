@@ -1,0 +1,74 @@
+body.dark {
+  background-color: $dark-black;
+  text-shadow: $middle-gray;
+  transition: color 0.4s ease-out, background-color 0.4s ease-out;
+
+  .card {
+    &--desc {
+      &__top {
+        color: #fff;
+      }
+    }
+  }
+
+  .toggler {
+    color: $pale-green;
+
+    &-slider:before {
+      background-color: $pale-green;
+    }
+  }
+
+  .index-title {
+    color: $white;
+  }
+
+  .header-area {
+    .header-contents {
+      .header-category-container {
+        h3 {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .main-aside {
+    background-color: $dark-black;
+    .aside-header {
+      .aside-tag-title {
+        color: $white;
+      }
+    }
+  }
+
+  .blog-post,
+  .blog-post-nav {
+    h1,
+    p {
+      color: $white;
+    }
+    blockquote {
+      > p {
+        color: $black;
+      }
+    }
+    &.blog-post-nav {
+      h2 {
+        color: $white;
+      }
+    }
+  }
+
+  .about-name-dark {
+    color: $white;
+  }
+
+  .self-introduction-dark {
+    color: $white;
+  }
+
+  .mail {
+    color: $white;
+  }
+}

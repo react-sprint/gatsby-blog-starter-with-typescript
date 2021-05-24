@@ -1,4 +1,9 @@
 body.light {
   background-color: $light-background-color;
   text-shadow: $light-text-shadow;
+  transition: color 0.4s ease-out, background-color 0.4s ease-out;
+
+  .toggler {
+    color: $theme-green;
+  }
 }

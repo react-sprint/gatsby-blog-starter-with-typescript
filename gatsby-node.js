@@ -77,6 +77,7 @@ exports.createSchemaCustomization = ({ actions }) => {
   // blog posts are stored inside "content/blog" instead of returning an error
   createTypes(`
     type SiteSiteMetadata {
+      title: String
       author: Author
       siteUrl: String
       social: Social
@@ -85,10 +86,16 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Author {
       name: String
       summary: String
+      selfIntroduction: String
     }
 
     type Social {
+      git: String
+      instagram: String
       twitter: String
+      linkdein: String
+      facebook: String
+      mail: String
     }
 
     type MarkdownRemark implements Node {

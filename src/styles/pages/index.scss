@@ -1,0 +1,95 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  @include pc {
+    display: grid;
+    grid-template-columns: calc(1024px - 282px) 282px;
+    .card-container {
+      order: 1;
+    }
+    .main-aside {
+      order: 2;
+    }
+  }
+}
+
+.aside {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  margin: 0 -25px 14px;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -ms-overflow-style: none;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.89);
+  z-index: 1111;
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
+    margin: 0px;
+    @include pc {
+      position: static;
+      overflow-x: hidden;
+      margin-bottom: 30px;
+      padding: 0;
+    }
+  }
+  &-tag-title {
+    @include point-font;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    margin-left: 10px;
+    color: $dark-black;
+  }
+  &-tag-container {
+    display: flex;
+    justify-content: start;
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .aside-header,
+  .contacts {
+    display: none;
+  }
+  @include pc {
+    position: sticky;
+    top: 0;
+    width: 282px;
+    height: 380px;
+    margin: 0;
+    white-space: normal;
+    overflow-x: hidden;
+    .aside-header,
+    .contacts {
+      display: flex;
+    }
+  }
+}
+
+.index-title {
+  @include card();
+  margin-bottom: 16px;
+  color: $dark-black;
+  font-size: 1rem;
+  font-weight: bold;
+  > img {
+    margin-right: 10px;
+  }
+  @include pc {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+}
+
+.card-container {
+  @include card();
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}

@@ -1,0 +1,134 @@
+.card {
+  margin-bottom: 38px;
+  transition: 0.2s ease-in-out;
+  overflow: hidden;
+  cursor: pointer;
+  &:hover {
+    transform: translate3d(0, -3px, 0);
+    filter: brightness(1.05);
+  }
+  @include tablet {
+    margin-bottom: 68px;
+  }
+  @include pc {
+    margin-bottom: 60px;
+    box-shadow: none;
+    border-radius: 0px;
+    overflow: auto;
+  }
+  &--image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid $border-gray;
+    border-radius: 4px 4px 0 0;
+    height: 168px;
+    > img {
+      width: 100%;
+    }
+    @include pc {
+      height: 185px;
+    }
+    &.no-thumbnail {
+      box-sizing: border-box;
+      padding: 20px;
+      span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+        color: white;
+        font-size: 42px;
+        font-weight: $fontWeight-black;
+        line-height: 1.3;
+      }
+    }
+    &.theme-color-1 {
+      background-color: $light-green;
+      span {
+        color: $pale-green;
+      }
+    }
+    &.theme-color-2 {
+      background-color: $middle-gray;
+      span {
+        color: $black;
+      }
+    }
+    &.theme-color-3 {
+      background-color: $dark-black;
+      span {
+        color: $light-gray;
+      }
+    }
+  }
+  &--desc {
+    &__top {
+      border-bottom: 1px solid $border-gray;
+      color: $dark-black;
+      .title {
+        line-height: 150%;
+        margin: 16px 0;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .contents {
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        height: 5.5rem;
+        font-size: 15px;
+        line-height: 150%;
+        /* --- css for "..." */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        text-align: left;
+        word-wrap: break-word;
+        /* css for "..." --- */
+      }
+    }
+    &__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 10px 0 20px;
+      color: $light-gray;
+      .card-category {
+        display: flex;
+        align-items: center;
+        margin-top: 0;
+        margin-bottom: 0;
+        &-icon {
+          width: 13px;
+          height: 12px;
+        }
+        &-text {
+          @include point-font();
+          color: $light-gray;
+          font-size: 13px;
+          margin-left: 6px;
+        }
+      }
+      .card-date {
+        display: flex;
+        align-items: center;
+        margin-left: 16px;
+        margin-top: 0;
+        margin-bottom: 0;
+        &-icon {
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 13px;
+          height: 12px;
+        }
+        &-text {
+          @include point-font();
+          color: $light-gray;
+          font-size: 13px;
+          margin-left: 6px;
+        }
+      }
+    }
+  }
+}

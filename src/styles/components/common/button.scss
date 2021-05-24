@@ -1,0 +1,39 @@
+.green {
+  @extend .default-color-layout;
+  background-color: $theme-green;
+  border: 1px solid $theme-green;
+}
+
+.black {
+  @extend .default-color-layout;
+  background-color: $black;
+  border: 1px solid $black;
+
+  &:hover {
+    box-shadow: 0px 4px 10px $black;
+  }
+}
+
+.default-color-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 92px;
+  height: 42px;
+  font-size: 14px;
+  font-weight: 700;
+  color: $white;
+  border-radius: 10px;
+  transition: 0.2s;
+  cursor: pointer;
+  img {
+    width: 18px;
+    height: 18px;
+    padding: 3px;
+  }
+
+  &:hover {
+    transition: 0.2s;
+    transform: translate3d(0, -3px, 0);
+  }
+}
