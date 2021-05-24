@@ -1,11 +1,17 @@
 {
-  "name": "gatsby-starter-blog",
-  "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "name": "gatsby-blog-with-typescript",
+  "description": "Gatsby Blog Starter with Typescript",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "contributors": [
+    "leeyun1533 <leeyun1533@gmail.com> (https://github.com/leeyun1533)",
+    "seung-00 <osy0056@khu.ac.kr> (https://github.com/seung-00)",
+    "dddieon <ajiop0123@gmail.com> (https://github.com/dddieon)",
+    "jeongnaehyeok <cnh0301@gmail.com> (https://github.com/jeongnaehyeok)",
+    "JeongShin <sjeong1127@gmail.com> (https://github.com/JeongShin)",
+    "sungyun6789 <sungyun5423@gmail.com> (https://github.com/sungyun6789)"
+  ],
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/react-sprint/gatsby-blog-with-typescript/issues"
   },
   "dependencies": {
     "@reach/router": "^1.3.4",
@@ -67,15 +73,15 @@
     "lint-staged": "^10.5.4",
     "prettier": "2.2.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/react-sprint/gatsby-blog-with-typescript#readme",
   "keywords": [
     "gatsby"
   ],
-  "license": "0BSD",
+  "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/react-sprint/gatsby-blog-with-typescript.git"
   },
   "husky": {
     "hooks": {
