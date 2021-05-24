@@ -10,7 +10,7 @@
 
 ## 🚀 Quick start
 
-1.  **Install gatsby cli **
+1.  **Install gatsby cli.**
 
    ```
    npm install -g gatsby-cli 
