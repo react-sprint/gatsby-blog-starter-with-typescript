@@ -9,7 +9,6 @@ import Category from '../components/common/Category';
 import Contacts from '../components/common/Contacts';
 import Card from '../components/common/Card';
 import titleIcon from '../images/title-icon.svg';
-import tagIcon from '../images/tag-icon.svg';
 
 import '../styles/pages/index.scss';
 
@@ -50,13 +49,6 @@ const BlogIndex = ({ data, location }) => {
       <SEO title="All posts" />
       <div className="main">
         <aside className="aside main-aside">
-          <div className="aside-header">
-            <div className="aside-tag-container">
-              <img src={tagIcon} alt="tag" className="aside-tag-img" />
-              <h2 className="aside-tag-title">TAG</h2>
-            </div>
-          </div>
-
           <Category categories={categories} category={category} setCategory={setCategory} />
           <Contacts />
         </aside>

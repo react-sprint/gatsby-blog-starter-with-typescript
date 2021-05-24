@@ -1,10 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Blog`,
+    title: `GATSBY BLOG`,
     author: {
       name: `jeongyun.lee`,
       summary: `FE Engineer`,
-      selfIntroduction: `Hello, I'm Frontend Developer`,
+      selfIntroduction: `Hello, this is a place where you can introduce yourself. 
+      If you modify Gatsby-config,
+      you can customize it freely! Thank you.`,
     },
     description: `blog starter`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,

@@ -2,10 +2,6 @@
   @extend .default-color-layout;
   background-color: $theme-green;
   border: 1px solid $theme-green;
-
-  &:hover {
-    box-shadow: 0px 4px 10px rgba(85, 175, 122, 0.4);
-  }
 }
 
 .black {
