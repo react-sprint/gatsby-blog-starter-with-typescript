@@ -9,7 +9,7 @@
 
     ```shell
     # create a new Gatsby site using the blog starter
-    gatsby new gatsby-blog-stater https://github.com/react-sprint/gatsby-blog-stater-with-typescript
+    gatsby new gatsby-blog-starter https://github.com/react-sprint/gatsby-blog-starter-with-typescript
     ```
 
 1.  **Start developing.**
