@@ -12,9 +12,9 @@
 
 1.  **Install gatsby cli.**
 
-   ```
-   npm install -g gatsby-cli 
-   ```
+      ```
+      npm install -g gatsby-cli 
+      ```
 
 2.  **Create a Gatsby site.**
 
