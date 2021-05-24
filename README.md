@@ -9,7 +9,7 @@
 
     ```shell
     # create a new Gatsby site using the blog starter
-    gatsby new my-blog-starter https://github.com/gatsbyjs/gatsby-starter-blog
+    gatsby new gatsby-blog-stater https://github.com/react-sprint/gatsby-blog-stater-with-typescript
     ```
 
 1.  **Start developing.**
@@ -17,7 +17,7 @@
     Navigate into your new site’s directory and start it up.
 
     ```shell
-    cd my-blog-starter/
+    cd gatsby-blog-stater/
     gatsby develop
     ```
 
