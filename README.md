@@ -1,4 +1,4 @@
-# Gatsby-blog-stater-with-typescript
+# Gatsby-blog-starter-with-typescript
 
 ![Thumbnail_1](https://user-images.githubusercontent.com/20167165/119387892-8d1dee80-bd04-11eb-90ed-72861bad7657.png)
 
