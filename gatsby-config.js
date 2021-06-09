@@ -21,7 +21,7 @@ module.exports = {
     commentInfo: {
       service: 'utterances', // select utterances or disqus
       disqusId: 'our-blog-starter', // your disqus shortname, check detail: disqus.com
-      utterancesId: 'react-sprint/blog-starter', // your gatsby repository, check detail: utteranc.es
+      utterancesId: 'react-sprint/gatsby-blog-starter-with-typescript', // your gatsby repository, check detail: utteranc.es
     },
   },
   plugins: [
