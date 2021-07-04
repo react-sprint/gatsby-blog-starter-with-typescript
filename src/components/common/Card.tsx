@@ -27,8 +27,9 @@ interface Props {
 }
 
 export default function Card({ post, thumbnail }: Props) {
-  const title = post.frontmatter.title.split(' ')[0] || post.fields.slug;
-  const { category } = post.frontmatter;
+  const title = post.frontmatter.title || post.fields.slug;
+  const { category, description } = post.frontmatter;
+
   const themeSize = 3;
   const themeStartNumber = 1;
 
@@ -49,7 +50,7 @@ export default function Card({ post, thumbnail }: Props) {
         <div className="card--desc">
           <div className="card--desc__top">
             <h2 className="title">{title}</h2>
-            <p className="contents">{post.frontmatter.description || post.excerpt}</p>
+            <p className="contents">{description || post.excerpt}</p>
           </div>
           <div className="card--desc__bottom">
             <p className="card-category">

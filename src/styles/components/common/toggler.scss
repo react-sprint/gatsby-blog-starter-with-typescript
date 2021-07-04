@@ -8,13 +8,13 @@
   border: 1px solid;
   cursor: pointer;
   @include pc {
-    width: 52px;
-    margin-right: 34px;
+    width: 58px;
+    height: 26px;
   }
 
   &-text {
     @include point-font;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 500;
     display: none;
     @include pc {
@@ -73,6 +73,10 @@
     border: 1px solid;
     transition: 0.4s;
     -webkit-transition: 0.4s;
+    @include pc {
+      height: 20px;
+      width: 20px;
+    }
   }
   @include pc {
     input:checked + &-slider:before {
