@@ -13,13 +13,15 @@ import titleIcon from '../images/title-icon.svg';
 import '../styles/pages/index.scss';
 
 const BlogIndex = ({ data, location }) => {
-  const posts = data.allMarkdownRemark.nodes;
   const categories: string[] = ['All', ...data.allMarkdownRemark.group.map((item) => item.fieldValue)];
   const [category, setCategory] = useState<string>((parse(globalHistory.location.search)?.category as string) || 'All');
+  const posts = data.allMarkdownRemark.nodes.filter((post) =>
+    category === 'All' ? post : category === post.frontmatter.category,
+  );
 
   const getThumbnail = (postIndex) => {
     const regex = /<img[^>]+src\s*=\s*['"]([^'"]+)['"][^>]*>/g;
-    const htmlString = data.allMarkdownRemark.nodes.map((htmlCode, htmlIndex) => {
+    const htmlString = posts.map((htmlCode, htmlIndex) => {
       if (postIndex === htmlIndex) {
         return htmlCode.html;
       }
