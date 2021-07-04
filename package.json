@@ -30,6 +30,7 @@
     "gatsby-plugin-sass": "^4.1.0",
     "gatsby-plugin-sharp": "^3.0.0",
     "gatsby-remark-copy-linked-files": "^3.0.0",
+    "gatsby-remark-emoji": "0.0.3",
     "gatsby-remark-images": "^4.0.0",
     "gatsby-remark-prismjs": "^4.0.0",
     "gatsby-remark-responsive-iframe": "^3.0.0",
