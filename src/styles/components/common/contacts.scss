@@ -2,17 +2,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  width: 300px;
   .mail {
+    width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 300px;
     height: 40px;
     color: $gray;
     font-size: 15px;
     margin-top: 45px;
     line-height: 21.45px;
-
+    @include pc {
+      padding-left: 12px;
+    }
     .tag-image {
       margin-right: 10px;
     }
@@ -26,22 +29,24 @@
       transform: translate3d(0, 0, 0);
     }
     23% {
-      transform: translate3d(0, 2px, 0);
+      transform: translate3d(0, 3px, 0);
     }
     80% {
-      transform: translate3d(0, -1px, 0);
+      transform: translate3d(0, -2px, 0);
     }
     100% {
       transform: translate3d(0, 0, 0);
     }
   }
   .snslink {
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 200px;
     height: 28px;
     margin-top: 36px;
+    @include pc {
+      padding-left: 12px;
+    }
     &--item {
       display: flex;
       justify-content: center;

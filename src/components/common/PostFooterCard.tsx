@@ -31,7 +31,7 @@ export default function PostFooterCard({ post, thumbnail }: Props) {
   return (
     <Link to={post.fields.slug}>
       <div className="post-footer-card">
-        <div className="card">
+        <div className="post-footer-card__card">
           <div className="left">
             <h2 className="title">{title}</h2>
             <p className="contents">{post.frontmatter.description || post.excerpt}</p>

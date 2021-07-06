@@ -2,7 +2,8 @@
   width: auto;
   padding: 0 25px;
   @include pc {
-    width: 282px;
+    width: 300px;
+    padding-left: 12px;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
@@ -20,8 +21,10 @@
     transition: 0.2s;
     font-weight: 500;
     font-size: 14px;
+    transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12), 0.3s box-shadow,
+      0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
     &:hover {
-      transform: translate3d(0, -1px, 0);
+      transform: scale(1.1);
       background-color: $border-gray;
       color: $theme-green;
     }

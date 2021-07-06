@@ -146,12 +146,13 @@
     --x-height-multiplier: 0.35;
     margin: $spacing-0 $spacing-0 $spacing-8 $spacing-0;
     padding: $spacing-0;
-    color: $gray;
+    color: $black;
+    font-weight: $fontWeight-medium;
   }
 
   ul,
   ol {
-    margin-left: $spacing-0;
+    margin-left: $spacing-4;
     margin-right: $spacing-0;
     padding: $spacing-0;
     margin-bottom: $spacing-8;

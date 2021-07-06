@@ -14,8 +14,6 @@ category: TypeScript
 
 무한 스크롤을 구현하는 방법에는 여러가지 방법이 있다. 전통적인? 방법은 `scroll` 윈도우 객체 또는 특정 `div`에 eventListenr를 추가하고, `div`가 화면 끝에 닿았을 때 data를 새로 로드하는 방식이다.
 
-<div class="attach">JavaScript</div>
-
 ```JavaScript
 function InfiniteScroll () {
     const fetchData = async () => {
@@ -60,8 +58,6 @@ function InfiniteScroll () {
 
 먼저, `useTargetObserver`이라는 Custom Hook을 생성한다. target을 `IntersctionObserver`로 감지해서 root(viewport)와 겹치면 `isInterseting` 이 true로 변경된다.
 
-<div class="attach">typescript</div>
-
 ```typescript
 import React, { useEffect, useState } from 'react';
 
@@ -104,8 +100,6 @@ export function useTargetObserver<T extends Element>(
 
 ### Common component
 
-<div class="attach">JavaScript</div>
-
 ```javascript
 interface InfiniteScrollProps {
   children: ReactNode;
@@ -139,8 +133,6 @@ export const InfiniteScroll = (props: InfiniteScrollProps) => {
 ```
 
 ### 사용부
-
-<div class="attach">JavaScript</div>
 
 ```javascript
 const SampleList = () => {
