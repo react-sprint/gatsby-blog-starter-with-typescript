@@ -76,7 +76,8 @@
   },
   "homepage": "https://github.com/react-sprint/gatsby-blog-stater-with-typescript#readme",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "gatsby-plugin"
   ],
   "license": "MIT",
   "main": "n/a",
